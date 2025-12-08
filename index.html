@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | University Admissions Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* --- COLOR PALETTE --- */
+            --bg-void: #050505;
+            --bg-glass: rgba(20, 20, 23, 0.7);
+            --bg-glass-light: rgba(255, 255, 255, 0.03);
+            
+            --border-dim: rgba(255, 255, 255, 0.08);
+            --border-bright: rgba(255, 255, 255, 0.15);
+            
+            --gold-primary: #D4AF37;
+            --gold-dim: rgba(212, 175, 55, 0.15);
+            --teal-accent: #37d4af;
+            --teal-dim: rgba(55, 212, 175, 0.1);
+            --blue-primary: #1E90FF;
+            --blue-dim: rgba(30, 144, 255, 0.15);
+            --jbnu-blue: #4B89DC;
+            --jbnu-dim: rgba(75, 137, 220, 0.15);
+            --red-alert: #d43737;
+            --text-main: #ECEFF4;
+            --text-muted: #88888a;
+            
+            /* --- FX --- */
+            --blur-strength: 20px;
+            --ease-elastic: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        
+        body {
+            background-color: var(--bg-void);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- BACKGROUND FX --- */
+        .ambient-glow {
+            position: fixed; top: -20%; left: -10%; width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+            filter: blur(100px); pointer-events: none; z-index: -2;
+        }
+        .grid-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(var(--border-dim) 1px, transparent 1px),
+            linear-gradient(90deg, var(--border-dim) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            opacity: 0.25; z-index: -1; pointer-events: none;
+        }
+        .noise-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 9000;
+        }
+
+        /* --- CURSOR --- */
+        .cursor-dot {
+            width: 6px; height: 6px; background: var(--gold-primary);
+            position: fixed; border-radius: 50%; z-index: 9999; pointer-events: none;
+            transform: translate(-50%, -50%); transition: transform 0.1s;
+        }
+        .cursor-outline {
+            width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.3);
+            position: fixed; border-radius: 50%; z-index: 9998; pointer-events: none;
+            transform: translate(-50%, -50%); transition: width 0.3s var(--ease-elastic), height 0.3s var(--ease-elastic), border-color 0.3s;
+        }
+
+        /* --- LAYOUT --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 60px 2vw; position: relative; z-index: 10; }
+
+        /* --- HEADER --- */
+        header { text-align: center; margin-bottom: 80px; }
+        
+        .status-pill {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 8px 20px; border-radius: 100px;
+            background: rgba(212, 175, 55, 0.05); border: 1px solid var(--gold-dim);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--gold-primary);
+            margin-bottom: 24px; box-shadow: 0 0 30px rgba(212,175,55,0.1);
+        }
+        .status-dot { width: 6px; height: 6px; background: var(--gold-primary); border-radius: 50%; animation: pulse 2s infinite; }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 600;
+            line-height: 1.1; margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 40%, #88888a 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle { font-size: 1.3rem; color: var(--text-muted); font-weight: 300; max-width: 800px; margin: 0 auto; }
+
+        /* --- UNIVERSITY GRID --- */
+        .uni-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .uni-card {
+            background: var(--bg-glass); border: 1px solid var(--border-dim);
+            border-radius: 20px; padding: 30px; backdrop-filter: blur(var(--blur-strength));
+            transition: all 0.3s; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        
+        .uni-card:hover { 
+            border-color: var(--border-bright); 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .uni-card.cnu:hover { border-color: var(--gold-primary); }
+        .uni-card.gnu:hover { border-color: var(--blue-primary); }
+        .uni-card.jbnu:hover { border-color: var(--jbnu-blue); }
+
+        .uni-header {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+        }
+
+        .uni-icon {
+            width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.5rem;
+        }
+
+        .cnu .uni-icon { background: rgba(212, 175, 55, 0.1); color: var(--gold-primary); }
+        .gnu .uni-icon { background: rgba(30, 144, 255, 0.1); color: var(--blue-primary); }
+        .jbnu .uni-icon { background: rgba(75, 137, 220, 0.1); color: var(--jbnu-blue); }
+
+        .uni-title h3 {
+            font-family: 'Space Grotesk'; font-size: 1.5rem; color: #fff; margin-bottom: 5px;
+        }
+
+        .uni-title p {
+            font-size: 0.9rem; color: var(--text-muted);
+        }
+
+        .uni-features {
+            margin: 20px 0; flex-grow: 1;
+        }
+
+        .feature-item {
+            display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+            font-size: 0.9rem; color: var(--text-main);
+        }
+
+        .feature-icon {
+            width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: bold;
+        }
+
+        .cnu .feature-icon { background: var(--gold-dim); color: var(--gold-primary); }
+        .gnu .feature-icon { background: var(--blue-dim); color: var(--blue-primary); }
+        .jbnu .feature-icon { background: var(--jbnu-dim); color: var(--jbnu-blue); }
+
+        .uni-link {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 20px; border-radius: 8px;
+            font-family: 'JetBrains Mono'; font-size: 0.9rem; font-weight: 500;
+            text-decoration: none; transition: all 0.3s; margin-top: 10px;
+        }
+
+        .cnu .uni-link {
+            background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-primary); color: var(--gold-primary);
+        }
+        .cnu .uni-link:hover {
+            background: var(--gold-primary); color: var(--bg-void);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .gnu .uni-link {
+            background: rgba(30, 144, 255, 0.1); border: 1px solid var(--blue-primary); color: var(--blue-primary);
+        }
+        .gnu .uni-link:hover {
+            background: var(--blue-primary); color: var(--bg-void);
+            box-shadow: 0 0 20px rgba(30, 144, 255, 0.3);
+        }
+
+        .jbnu .uni-link {
+            background: rgba(75, 137, 220, 0.1); border: 1px solid var(--jbnu-blue); color: var(--jbnu-blue);
+        }
+        .jbnu .uni-link:hover {
+            background: var(--jbnu-blue); color: var(--bg-void);
+            box-shadow: 0 0 20px rgba(75, 137, 220, 0.3);
+        }
+
+        /* --- COMPARISON CARD --- */
+        .comparison-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--bg-glass) 0%, rgba(255,255,255,0.05) 100%);
+            border: 1px solid var(--border-bright);
+            text-align: center; padding: 40px;
+        }
+
+        .comparison-card h2 {
+            font-family: 'Space Grotesk'; font-size: 2rem; margin-bottom: 15px; color: #fff;
+        }
+
+        .comparison-card p {
+            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+
+        .comparison-link {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 30px; border-radius: 10px;
+            font-family: 'Space Grotesk'; font-size: 1.1rem; font-weight: 600;
+            text-decoration: none; transition: all 0.3s;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--teal-accent) 100%);
+            color: var(--bg-void);
+        }
+
+        .comparison-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center; padding: 40px 0; border-top: 1px solid var(--border-dim);
+            margin-top: 80px;
+        }
+
+        .footer p {
+            color: var(--text-muted); font-size: 0.9rem;
+        }
+
+        /* --- ANIMATION --- */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="ambient-glow"></div>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <div class="container">
+        <header>
+            <div class="status-pill">
+                <div class="status-dot"></div>
+                <span id="system-time">SYSTEM DATE: INITIALIZING...</span>
+            </div>
+            <h1>NEXUS Admissions Portal</h1>
+            <p class="subtitle">Fall 2026 Korean University Admissions Command Center<br>Select a university to view detailed admissions intelligence</p>
+        </header>
+
+        <div class="uni-grid">
+            <!-- CNU CARD -->
+            <div class="uni-card cnu interactable">
+                <div class="uni-header">
+                    <div class="uni-icon">CNU</div>
+                    <div class="uni-title">
+                        <h3>Chonnam National University</h3>
+                        <p>Gwangju, South Korea</p>
+                    </div>
+                </div>
+                
+                <div class="uni-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Halal Friendly Kitchen (Yeo-su Dorms)</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Engineering & AI Programs</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Semester 2 Scholarship Opportunities</span>
+                    </div>
+                </div>
+                
+                <a href="cnu-chonnam.html" class="uni-link">
+                    View Details →
+                </a>
+            </div>
+
+            <!-- GNU CARD -->
+            <div class="uni-card gnu interactable">
+                <div class="uni-header">
+                    <div class="uni-icon">GNU</div>
+                    <div class="uni-title">
+                        <h3>Gyeongsang National University</h3>
+                        <p>Jinju, South Korea</p>
+                    </div>
+                </div>
+                
+                <div class="uni-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>GIS Track Benefits (Airfare + Settlement)</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Application Fee Waiver</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Cost-Effective Dorm Meal Plans</span>
+                    </div>
+                </div>
+                
+                <a href="gnu-gyeongsang.html" class="uni-link">
+                    View Details →
+                </a>
+            </div>
+
+            <!-- JBNU CARD -->
+            <div class="uni-card jbnu interactable">
+                <div class="uni-header">
+                    <div class="uni-icon">JBNU</div>
+                    <div class="uni-title">
+                        <h3>Jeonbuk National University</h3>
+                        <p>Jeonju, South Korea</p>
+                    </div>
+                </div>
+                
+                <div class="uni-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Type 3 Scholarship (50% Tuition Waiver)</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Cash Incentive Program (1.3M KRW)</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Chambit Hall with Meal Plan</span>
+                    </div>
+                </div>
+                
+                <a href="jbnu-jeonbuk.html" class="uni-link">
+                    View Details →
+                </a>
+            </div>
+
+            <!-- COMPARISON CARD -->
+            <div class="comparison-card interactable">
+                <h2>Comprehensive Comparison</h2>
+                <p>View detailed side-by-side analysis of all three universities including costs, scholarships, timelines, and requirements</p>
+                <a href="Selected University.html" class="comparison-link">
+                    Compare All Universities →
+                </a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 NEXUS Admissions Command Center • Fall 2026 Intake • Last Updated: <span id="last-updated">Loading...</span></p>
+        </footer>
+    </div>
+
+    <script>
+        // --- REALTIME CLOCK LOGIC ---
+        function updateTime() {
+            const now = new Date();
+            const dateOptions = { month: 'short', day: '2-digit', year: 'numeric' };
+            const dateStr = now.toLocaleDateString('en-US', dateOptions).toUpperCase();
+            const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('system-time').innerText = `SYSTEM DATE: ${dateStr} // ${timeStr}`;
+            document.getElementById('last-updated').innerText = dateStr;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // --- MOUSE PHYSICS ---
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        let mouse = { x: 0, y: 0 };
+        let outline = { x: 0, y: 0 };
+
+        document.addEventListener('mousemove', e => {
+            mouse.x = e.clientX; mouse.y = e.clientY;
+            cursorDot.style.transform = `translate(${mouse.x}px, ${mouse.y}px) translate(-50%, -50%)`;
+        });
+
+        function animateCursor() {
+            let speed = 0.2;
+            outline.x += (mouse.x - outline.x) * speed;
+            outline.y += (mouse.y - outline.y) * speed;
+            cursorOutline.style.transform = `translate(${outline.x}px, ${outline.y}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // --- HOVER INTERACTION ---
+        document.querySelectorAll('.interactable').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.borderColor = 'var(--gold-primary)';
+                cursorOutline.style.backgroundColor = 'rgba(212, 175, 55, 0.05)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.borderColor = 'rgba(255,255,255,0.3)';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // --- PARALLAX GLOW ---
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth - e.pageX) / 40;
+            const y = (window.innerHeight - e.pageY) / 40;
+            document.querySelector('.ambient-glow').style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body>
+</html>
