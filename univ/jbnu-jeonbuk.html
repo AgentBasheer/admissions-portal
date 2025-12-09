@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | JBNU Jeonbuk Admissions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/university-common.css">
+    <link rel="stylesheet" href="../css/jbnu-style.css">
+    
+    <!-- JS -->
+    <script src="../js/university-common.js" defer></script>
+    <script src="../js/jbnu-script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="ambient-glow"></div>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- CURRENCY TOGGLE -->
+    <button id="currency-toggle" class="interactable" onclick="toggleCurrency()">
+        <span id="curr-label">KRW</span>
+        <div class="toggle-track">
+            <div class="toggle-thumb"></div>
+        </div>
+        <span>PKR</span>
+    </button>
+
+    <div class="container">
+        <header>
+            <div class="status-pill">
+                <div class="status-dot"></div>
+                <span id="system-time">SYSTEM DATE: INITIALIZING...</span>
+            </div>
+            <h1>JBNU // Jeonbuk National University</h1>
+            <p class="subtitle">Fall 2026 Admissions Guideline</p>
+        </header>
+
+        <!-- NAVIGATION BAR -->
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-btn">← Back to Portal</a>
+            <div class="nav-links">
+                <a href="cnu-chonnam.html" class="nav-btn">CNU</a>
+                <a href="jbnu-jeonbuk.html" class="nav-btn active">JBNU</a>
+            </div>
+        </nav>
+
+        <!-- ================= JBNU (JEONBUK) ================= -->
+        <div id="jbnu" class="uni-content">
+            <!-- CATEGORY TABS -->
+            <div class="category-tabs">
+                <div class="category-tab active" onclick="showCategory('overview')">📊 Overview</div>
+                <div class="category-tab" onclick="showCategory('academic')">🎓 Academic</div>
+                <div class="category-tab" onclick="showCategory('financial')">💰 Financial</div>
+                <div class="category-tab" onclick="showCategory('documents')">📦 Documents</div>
+                <div class="category-tab" onclick="showCategory('contact')">📞 Contact</div>
+                <div class="category-tab" onclick="showCategory('faq')">❓ FAQ</div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <!-- LEFT COLUMN -->
+                <div>
+                    <!-- OVERVIEW CATEGORY -->
+                    <div id="overview-content" class="category-content active">
+                        <!-- TACTICAL DATA -->
+                        <div class="tactical-grid">
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Safe Launch Budget</div>
+                                <div class="tac-value">~<span class="money" data-krw="4987000">4.98M KRW</span></div>
+                                <div class="tac-sub">Includes 650k Cash Back Incentive. Assumes Type 3 Scholarship.
+                                </div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Strategic Advantage</div>
+                                <div class="tac-value risk-low">CASH INCENTIVE</div>
+                                <div class="tac-sub">
+                                    <span class="highlight-text">1.3M KRW Total.</span><br>
+                                    You get 650k KRW cash in Sem 1 & Sem 2.
+                                </div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Dorm Logistics</div>
+                                <div class="tac-value">Meal Plan Inc.</div>
+                                <div class="tac-sub">Chambit Hall includes 3 meals/day (Mon-Fri).</div>
+                            </div>
+                        </div>
+
+                        <!-- TIMELINE -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Timeline Operations (2026 Admissions)</div>
+                            <div class="timeline-track">
+                                <div class="timeline-item active">
+                                    <div class="timeline-marker"></div>
+                                    <span class="you-are-here">CURRENT</span>
+                                    <span class="timeline-date">DEC 2025 - MAR 2026</span>
+                                    <div class="timeline-title">Doc Preparation</div>
+                                    <p class="timeline-desc">
+                                        1. Apostille High School Diploma & Transcripts.<br>
+                                        2. Secure Bank Certificate (>16M KRW, Original).<br>
+                                        3. Prepare IELTS (Aim for 7.5 for Type 3 Schol).
+                                    </p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <span class="timeline-date">EST. SEPT 22 - OCT 3 (1st Round)</span>
+                                    <div class="timeline-title">Online Application</div>
+                                    <p class="timeline-desc">Apply via JBNU website / UwayApply. Pay 80,000 KRW fee.
+                                        Print Application Form.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <span class="timeline-date">EST. OCT 10 (Deadline)</span>
+                                    <div class="timeline-title">Postal Submission</div>
+                                    <p class="timeline-desc">Docs must arrive at International Center. <strong>Interview
+                                            schedule announced late Oct.</strong></p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <span class="timeline-date">EST. JAN 2026</span>
+                                    <div class="timeline-title">Tuition Payment</div>
+                                    <p class="timeline-desc">Pay tuition (deducting scholarship) and Dormitory Fee. Visa
+                                        issuance follows.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACADEMIC CATEGORY -->
+                    <div id="academic-content" class="category-content">
+                        <!-- RECOMMENDED MAJOR SECTION -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Recommended Major</div>
+                            <div class="doc-card interactable">
+                                <div class="doc-head">🎓 School of International Engineering & Science</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">Campus</span>
+                                        <span class="badge badge-gold">Jeonju Campus</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">College</span>
+                                        <span>Engineering</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">What it is</span>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                                        International engineering program with focus on global engineering practices and
+                                        cross-cultural collaboration
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">Evaluation Type</span>
+                                        <span class="badge badge-teal">Documents + Interview</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">Risk Level</span>
+                                        <span style="color: var(--teal-accent); font-weight: 700;">✅ Low
+                                            (Recommended)</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">Contact</span>
+                                        <span>063-270-4653</span>
+                                    </div>
+                                    <div class="note">
+                                        Your IELTS 7.5 makes you a strong candidate. Interview required but manageable
+                                        with
+                                        preparation.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FINANCIAL CATEGORY -->
+                    <div id="financial-content" class="category-content">
+                        <!-- FINANCIAL INTELLIGENCE PANEL (3 PHASES) -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Financial Intelligence (Engineering/AI)</div>
+                            <div class="fin-grid-3">
+
+                                <!-- PHASE 1: LAUNCH (BEST CASE) -->
+                                <div class="fin-card highlight">
+                                    <div class="fin-col-title">🚀 MISSION LAUNCH<br>(Sem 1 w/ Schol & Cash)</div>
+                                    <div class="fin-row">
+                                        <div>Flight Ticket<span class="fin-sub">Est. One-way</span></div>
+                                        <span class="money" data-krw="900000">900,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Tuition (Type 3)<span class="fin-sub">IELTS 7.5 (50% Waiver)</span></div>
+                                        <span class="money" data-krw="1557000">1,557,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Dorm (Chambit)<span class="fin-sub">Inc. M-F Meals (Est)</span></div>
+                                        <span class="money" data-krw="1350000">1,350,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
+                                        <div>Living Support<span class="fin-sub">Cash Refund (Sem 1)</span></div>
+                                        <span class="money" data-krw="-650000">-650,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Living Expenses<span class="fin-sub">4 Mo (Low Cost)</span></div>
+                                        <span class="money" data-krw="1600000">1,600,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Insur + App Fee<span class="fin-sub">Misc</span></div>
+                                        <span class="money" data-krw="230000">230,000 KRW</span>
+                                    </div>
+                                    <div class="fin-total">
+                                        <span>NET LAUNCH COST</span>
+                                        <span class="money" data-krw="4987000">4,987,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 2: SEMESTER 2 -->
+                                <div class="fin-card">
+                                    <div class="fin-col-title">🏁 SEMESTER 2<br>(Includes 2nd Cash Pay)</div>
+                                    <div class="fin-row">
+                                        <div>Tuition (Sem 2)<span class="fin-sub">Base Cost (No Schol)</span></div>
+                                        <span class="money" data-krw="2704000">2,704,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Dorm (Chambit)<span class="fin-sub">Renewal</span></div>
+                                        <span class="money" data-krw="1350000">1,350,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
+                                        <div>Living Support<span class="fin-sub">Cash Refund (Sem 2)</span></div>
+                                        <span class="money" data-krw="-650000">-650,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Living Expenses<span class="fin-sub">4 Months</span></div>
+                                        <span class="money" data-krw="1600000">1,600,000 KRW</span>
+                                    </div>
+                                    <div class="fin-total"
+                                        style="border-color:var(--border-dim); color:var(--text-main);">
+                                        <span>SEM 2 NET COST</span>
+                                        <span class="money" data-krw="5004000">5,004,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 3: YEAR 2+ ANNUAL -->
+                                <div class="fin-card">
+                                    <div class="fin-col-title">🏢 YEAR 2+ ANNUAL<br>(No Support Cash)</div>
+                                    <div class="fin-row">
+                                        <div>Tuition (Annual)<span class="fin-sub">2 Semesters</span></div>
+                                        <span class="money" data-krw="5408000">5,408,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Dorm (Yearly)<span class="fin-sub">12 Mo (Inc. Vacation)</span></div>
+                                        <span class="money" data-krw="4000000">4,000,000 KRW</span>
+                                    </div>
+                                    <div class="fin-row">
+                                        <div>Living Expenses<span class="fin-sub">12 Mo (Low Cost)</span></div>
+                                        <span class="money" data-krw="3840000">3,840,000 KRW</span>
+                                    </div>
+                                    <div class="fin-total"
+                                        style="border-color:var(--border-dim); color:var(--text-main);">
+                                        <span>ANNUAL OPS</span>
+                                        <span class="money" data-krw="13248000">13,248,000 KRW</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- LIVING EXPENSES DEEP DIVE -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Life Support: The Chambit Hall Advantage</div>
+                            <div class="living-grid">
+
+                                <!-- COLUMN 1: UNIT ANALYSIS -->
+                                <div class="unit-card">
+                                    <div class="unit-header">MONTHLY UNIT ANALYSIS (JBNU JEONJU)</div>
+                                    <div class="unit-row">
+                                        <div>Weekday Meals<span class="fin-sub">Covered by Dorm Fee</span></div>
+                                        <span class="money" data-krw="0">0 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Weekend Meals<span class="fin-sub">~8 Days/Mo @ 10k</span></div>
+                                        <span class="money" data-krw="80000">80,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Snacks / Coffee<span class="fin-sub">Moderate</span></div>
+                                        <span class="money" data-krw="100000">100,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Mobile Data (Sim)<span class="fin-sub">Essential</span></div>
+                                        <span class="money" data-krw="35000">35,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Bus/Transport<span class="fin-sub">Campus is walkable</span></div>
+                                        <span class="money" data-krw="20000">20,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
+                                        <div>Mandatory NHIS Insur.<span class="fin-sub">Visa Requirement</span></div>
+                                        <span class="money" data-krw="76390">76,390 KRW</span>
+                                    </div>
+                                    <div class="unit-total">
+                                        <span>ESTIMATED TOTAL</span>
+                                        <span class="money" data-krw="311390">311,390 KRW</span>
+                                    </div>
+                                    <div class="unit-note">
+                                        *Because Chambit Hall includes food, your monthly cash requirement is extremely
+                                        low
+                                        compared to other universities.
+                                    </div>
+                                </div>
+
+                                <!-- COLUMN 2: THE COMPARISON -->
+                                <div class="comparison-card">
+                                    <div
+                                        style="font-family:'Space Grotesk'; font-size:1.2rem; color:#fff; margin-bottom:10px;">
+                                        JBNU Dorm Strategy</div>
+
+                                    <!-- CHAMBIT MODE -->
+                                    <div>
+                                        <div class="mode-row">
+                                            <span style="font-size:0.8rem; color:var(--gold-primary);">CHAMBIT HALL
+                                                (Meal
+                                                Plan)</span>
+                                            <span class="money" data-krw="320000">~320k KRW / Mo</span>
+                                        </div>
+                                        <div class="mode-bar" style="background:rgba(220, 38, 38, 0.1);">
+                                            <div class="mode-fill" style="width:40%; background:var(--gold-primary);">
+                                            </div>
+                                        </div>
+                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">High
+                                            Upfront
+                                            (Dorm Fee) but Low Monthly Stress.</div>
+                                    </div>
+
+                                    <!-- COOKING MODE -->
+                                    <div>
+                                        <div class="mode-row">
+                                            <span style="font-size:0.8rem; color:var(--text-muted);">PRIVATE HOUSING
+                                                (Cooking)</span>
+                                            <span class="money" data-krw="600000">~600k KRW / Mo</span>
+                                        </div>
+                                        <div class="mode-bar" style="background:rgba(255,255,255,0.1);">
+                                            <div class="mode-fill" style="width:80%; background:#888;"></div>
+                                        </div>
+                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Higher
+                                            monthly cash flow needed for groceries/rent.</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- SCHOLARSHIP INTELLIGENCE CENTER -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Scholarship Intelligence (PDF Pg 17)</div>
+                            <div class="schol-grid">
+
+                                <!-- SEMESTER 1: UNLOCKED -->
+                                <div class="schol-card unlocked">
+                                    <div class="schol-status status-active">Semester 1: AVAILABLE</div>
+                                    <div class="tac-value" style="color:#fff; font-size:1rem;">Freshman Scholarship
+                                    </div>
+                                    <p class="tac-sub" style="margin-top:10px; margin-bottom:10px;">
+                                        JBNU offers entrance scholarships based on Language Score (IELTS/TOPIK).
+                                    </p>
+
+                                    <!-- TYPE 3 TARGET -->
+                                    <div class="schol-target-row">
+                                        <span style="color:var(--gold-primary);">Target: Type 3 (IELTS 7.5)</span>
+                                        <span class="badge badge-gold">50% T2 WAIVER</span>
+                                    </div>
+                                    <div class="gpa-bar-bg">
+                                        <div class="gpa-bar-fill bar-gold"></div>
+                                    </div>
+                                    <div class="fin-sub" style="margin-bottom:15px;">
+                                        Waives 50% of Tuition II. <br>
+                                        Engineering: 2.29M -> 1.14M Waiver.<br>
+                                        <strong>You Pay: ~1.55M KRW total.</strong>
+                                    </div>
+
+                                    <!-- TYPE 5 TARGET -->
+                                    <div class="schol-target-row">
+                                        <span style="color:var(--text-muted);">Backup: Type 5 (Other Scores)</span>
+                                        <span class="badge badge-gray">100% T1 WAIVER</span>
+                                    </div>
+                                    <div class="gpa-bar-bg">
+                                        <div class="gpa-bar-fill" style="width:40%; background:#888;"></div>
+                                    </div>
+                                    <div class="fin-sub">
+                                        Waives Tuition I only (~410k KRW).
+                                    </div>
+                                </div>
+
+                                <!-- SEMESTER 2: MERIT BASED -->
+                                <div class="schol-card unlocked">
+                                    <div class="schol-status status-active">Semester 2+: MERIT</div>
+                                    <p class="tac-sub" style="margin-bottom:15px;">
+                                        Based on previous semester GPA. Must take at least 15 credits.
+                                    </p>
+
+                                    <!-- GPA TARGET 1 -->
+                                    <div class="schol-target-row">
+                                        <span style="color:#fff;">Top Tier (GPA ~4.0+)</span>
+                                        <span class="money" data-krw="2704000">100% Waiver</span>
+                                    </div>
+                                    <div class="gpa-bar-bg">
+                                        <div class="gpa-bar-fill bar-teal"></div>
+                                    </div>
+                                    <div class="fin-sub" style="margin-bottom:15px;">Full Tuition I & II Waiver.</div>
+
+                                    <!-- GPA TARGET 2 -->
+                                    <div class="schol-target-row">
+                                        <span style="color:#fff;">Mid Tier (GPA ~3.5+)</span>
+                                        <span class="money" data-krw="1557000">~50% Savings</span>
+                                    </div>
+                                    <div class="gpa-bar-bg">
+                                        <div class="gpa-bar-fill bar-teal" style="width:50%;"></div>
+                                    </div>
+                                    <div class="fin-sub">Specific amounts depend on department ranking.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DOCUMENTS CATEGORY -->
+                    <div id="documents-content" class="category-content">
+                        <!-- DOCUMENTS -->
+                        <div class="doc-section-title">📦 Required Documents (PDF Pg 6)</div>
+                        <div class="doc-columns">
+
+                            <!-- COL 1: FORMS -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">📄 Mandatory Forms</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Application Form
+                                        </span>
+                                        <span class="badge badge-gray">PRINT</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Affidavit of Support
+                                        </span>
+                                        <span class="badge badge-teal">SIGNED</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Privacy Agreement
+                                        </span>
+                                        <span class="badge badge-teal">SIGNED</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COL 2: ACADEMIC & LEGAL -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">🏛️ Academic & Legal</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> HSSC Diploma
+                                        </span>
+                                        <span class="badge badge-gold">APOSTILLE</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> SSC Diploma
+                                        </span>
+                                        <span class="badge badge-gold">APOSTILLE</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> HSSC Transcript
+                                        </span>
+                                        <span class="badge badge-teal">NOTARIZED</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> SSC Transcript
+                                        </span>
+                                        <span class="badge badge-teal">NOTARIZED</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Family Relations
+                                        </span>
+                                        <span class="badge badge-teal">NOTARIZED</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Applicant/Parent Passport
+                                        </span>
+                                        <span class="badge badge-gray">COPY</span>
+                                    </div>
+                                    <div class="note">Transcript must show <strong>Credit Points</strong> &
+                                        <strong>Percentile Score</strong>.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COL 3: FINANCIAL & LANGUAGE -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">💰 Financial & Language</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Bank Certificate
+                                        </span>
+                                        <span class="badge badge-gold">ORIGINAL</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> IELTS / TOPIK
+                                        </span>
+                                        <span class="badge badge-gold">REQUIRED</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>Fin:</strong> > <span class="money" data-krw="16000000">16,000,000
+                                            KRW</span>. <br>
+                                        Issued within 30 days of submission.<br>
+                                        <strong>Lang:</strong> Valid for 2 years.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTACT CATEGORY -->
+                    <div id="contact-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">Application Support & Contact Information</div>
+                            <div class="doc-columns">
+                                <div class="doc-card interactable">
+                                    <div class="doc-head">💳 Application Details</div>
+                                    <div class="doc-body">
+                                        <div class="doc-row">
+                                            <span class="doc-name">Application Fee</span>
+                                            <span class="money" data-krw="80000">80,000 KRW</span>
+                                        </div>
+                                        <div class="doc-row">
+                                            <span class="doc-name">Submission Type</span>
+                                            <span class="badge badge-gray">POSTAL</span>
+                                        </div>
+                                        <div class="note">Application via Uway/JBNU website. Docs via post.</div>
+                                    </div>
+                                </div>
+
+                                <div class="doc-card interactable">
+                                    <div class="doc-head">📍 Submission Address</div>
+                                    <div class="doc-body">
+                                        <div style="font-family:'JetBrains Mono'; font-size:0.8rem; line-height:1.6;">
+                                            Office of International Affairs,<br>
+                                            International Center 3rd Floor,<br>
+                                            Jeonbuk National University,<br>
+                                            567 Baekje-daero, Deokjin-gu,<br>
+                                            Jeonju-si, Jeollabuk-do,<br>
+                                            54896 Republic of Korea
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="doc-card interactable">
+                                    <div class="doc-head">📞 Contact Channels</div>
+                                    <div class="doc-body">
+                                        <div class="doc-row">
+                                            <span class="doc-name">Phone</span>
+                                            <span>+82-63-270-4653</span>
+                                        </div>
+                                        <div class="doc-row">
+                                            <span class="doc-name">Email</span>
+                                            <span>admissionu@jbnu.ac.kr</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ CATEGORY -->
+                    <div id="faq-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">Frequently Asked Questions (JBNU Admissions)</div>
+
+                            <!-- FAQ ITEM 1 -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>What is the "Cash Incentive" mentioned?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            JBNU provides a unique living support fund for international students. You
+                                            receive approximately <strong>650,000 KRW in cash</strong> during Semester
+                                            1, and another <strong>650,000 KRW</strong> during Semester 2, totaling ~1.3
+                                            Million KRW. This offsets your initial costs significantly.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ ITEM 2 -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>How does the scholarship system work for Freshmen?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            Freshman scholarships are based on your language score.
+                                            <strong>Type 3 (IELTS 7.5 or TOPIK 4)</strong> waives 50% of Tuition II (the
+                                            expensive part).
+                                            <strong>Type 5</strong> waives 100% of Tuition I (the cheaper part).
+                                            Your IELTS 7.5 qualifies you for Type 3, which is the best value for
+                                            Engineering majors.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ ITEM 3 -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Is living in the dormitory mandatory?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            It is not strictly mandatory, but <strong>highly recommended</strong> for
+                                            the first year. The "Chambit Hall" package includes 3 meals a day (Mon-Fri)
+                                            in the cost. This reduces your daily food expenses to almost zero during the
+                                            week, making it financially superior to living off-campus.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ ITEM 4 -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>What form is the interview?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            The interview accounts for 20% of your evaluation. It is typically conducted
+                                            via Zoom or phone for overseas applicants. They will ask about your study
+                                            plan, motivation, and financial stability.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ ITEM 5 -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Can I apply without Apostille documents?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            No. JBNU strictly requires Apostille (or Consular Authentication) for your
+                                            High School Diploma and Transcripts. These must be submitted by the
+                                            deadline.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div>
+                    <div class="info-card interactable">
+                        <div class="info-block">
+                            <div class="info-label">Application Fee</div>
+                            <div class="info-value highlight-text"><span class="money" data-krw="80000">80,000
+                                    KRW</span></div>
+                            <div class="info-sub">Non-refundable. Paid via UwayApply.</div>
+                        </div>
+                        <div class="info-block">
+                            <div class="info-label">Evaluation Logic</div>
+                            <div class="info-value">40 / 40 / 20</div>
+                            <div class="info-sub">
+                                Language: 40%<br>
+                                Scholastic: 40%<br>
+                                Interview: 20%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card interactable">
+                        <div class="info-block">
+                            <div class="info-label">Submission Address</div>
+                            <div class="info-sub" style="font-family:'JetBrains Mono'; font-size:0.8rem;">
+                                Office of International Affairs,<br>
+                                International Center 3rd Floor,<br>
+                                Jeonbuk National University,<br>
+                                567 Baekje-daero, Deokjin-gu,<br>
+                                Jeonju-si, Jeollabuk-do,<br>
+                                54896 Republic of Korea
+                            </div>
+                        </div>
+                        <div class="info-block" style="margin-top:20px;">
+                            <div class="info-label">Admissions Contact</div>
+                            <div class="info-sub">
+                                📞 +82-63-270-4653<br>
+                                📧 admissionu@jbnu.ac.kr
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
