@@ -13,7 +13,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/university-common.css">
-    
+
     <!-- JS -->
     <script src="../js/university-common.js" defer></script>
     <script src="../js/jbnu-script.js" defer></script>
@@ -63,6 +63,9 @@
                 <div class="category-tab active" onclick="showCategory('overview')">📊 Overview</div>
                 <div class="category-tab" onclick="showCategory('academic')">🎓 Academic</div>
                 <div class="category-tab" onclick="showCategory('financial')">💰 Financial</div>
+                <div class="category-tab" onclick="showCategory('scholarship')">🎓 Scholarship</div>
+                <div class="category-tab" onclick="showCategory('dormitory')">🏠 Dormitory</div>
+                <div class="category-tab" onclick="showCategory('monthly-expenses')">💸 Expenses</div>
                 <div class="category-tab" onclick="showCategory('documents')">📦 Documents</div>
                 <div class="category-tab" onclick="showCategory('contact')">📞 Contact</div>
                 <div class="category-tab" onclick="showCategory('faq')">❓ FAQ</div>
@@ -78,8 +81,9 @@
                         <div class="tactical-grid">
                             <div class="tactical-card interactable">
                                 <div class="tac-head">Safe Launch Budget</div>
-                                <div class="tac-value">~<span class="money" data-krw="4987000">4.98M KRW</span></div>
-                                <div class="tac-sub">Includes 650k Cash Back Incentive. Assumes Type 3 Scholarship.
+                                <div class="tac-value">~<span class="money" data-krw="4490000">4.49M KRW</span></div>
+                                <div class="tac-sub">Excludes Cash Incentive (received after arrival). Includes Type 3
+                                    Scholarship (IELTS 7.5) on Tuition Fee 2 only.
                                 </div>
                             </div>
                             <div class="tactical-card interactable">
@@ -87,7 +91,8 @@
                                 <div class="tac-value risk-low">CASH INCENTIVE</div>
                                 <div class="tac-sub">
                                     <span class="highlight-text">1.3M KRW Total.</span><br>
-                                    You get 650k KRW cash in Sem 1 & Sem 2.
+                                    You get 650k KRW cash in Sem 1 & Sem 2.<br>
+                                    <strong>Note:</strong> Not included in launch budget (received after arrival).
                                 </div>
                             </div>
                             <div class="tactical-card interactable">
@@ -139,9 +144,11 @@
 
                     <!-- ACADEMIC CATEGORY -->
                     <div id="academic-content" class="category-content">
-                        <!-- RECOMMENDED MAJOR SECTION -->
-                        <div class="glass-panel">
-                            <div class="panel-header">Recommended Major</div>
+                        <!-- ACADEMIC PROGRAMS SECTION -->
+                        <div class="doc-section-title">🎓 Academic Programs (PDF Pg 8)</div>
+                        <div class="doc-columns">
+
+                            <!-- COL 1: RECOMMENDED MAJOR -->
                             <div class="doc-card interactable">
                                 <div class="doc-head">🎓 School of International Engineering & Science</div>
                                 <div class="doc-body">
@@ -180,11 +187,63 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <!-- COL 3: LANGUAGE REQUIREMENTS -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">🌍 Language Requirements</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> English Proficiency
+                                        </span>
+                                        <span class="badge badge-gold">IELTS 7.0+</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Korean Proficiency
+                                        </span>
+                                        <span class="badge badge-gray">Optional</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Interview
+                                        </span>
+                                        <span class="badge badge-teal">Required</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>English:</strong> IELTS 7.5 recommended for Type 3 Scholarship.<br>
+                                        <strong>Korean:</strong> TOPIK Level 4+ for Korean-track programs.<br>
+                                        <strong>Interview:</strong> Conducted via Zoom for overseas applicants.
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     <!-- FINANCIAL CATEGORY -->
                     <div id="financial-content" class="category-content">
+                        <!-- FINANCIAL OVERVIEW CARDS -->
+                        <div class="tactical-grid">
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Application Fee</div>
+                                <div class="tac-value"><span class="money" data-krw="80000">80,000 KRW</span></div>
+                                <div class="tac-sub">Non-refundable. Paid via UwayApply.</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Tuition Fee Total</div>
+                                <div class="tac-value"><span class="money" data-krw="2704000">2.70M KRW</span></div>
+                                <div class="tac-sub">Per semester before scholarships. Includes Fee 1 & Fee 2.</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Dormitory Fee</div>
+                                <div class="tac-value"><span class="money" data-krw="1350000">1.35M KRW</span></div>
+                                <div class="tac-sub">Chambit Hall (6 months). Includes weekday meals.</div>
+                            </div>
+                        </div>
+
                         <!-- FINANCIAL INTELLIGENCE PANEL (3 PHASES) -->
                         <div class="glass-panel">
                             <div class="panel-header">Financial Intelligence (Engineering/AI)</div>
@@ -192,173 +251,94 @@
 
                                 <!-- PHASE 1: LAUNCH (BEST CASE) -->
                                 <div class="fin-card highlight">
-                                    <div class="fin-col-title">🚀 MISSION LAUNCH<br>(Sem 1 w/ Schol & Cash)</div>
-                                    <div class="fin-row">
-                                        <div>Flight Ticket<span class="fin-sub">Est. One-way</span></div>
-                                        <span class="money" data-krw="900000">900,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Tuition (Type 3)<span class="fin-sub">IELTS 7.5 (50% Waiver)</span></div>
-                                        <span class="money" data-krw="1557000">1,557,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Dorm (Chambit)<span class="fin-sub">Inc. M-F Meals (Est)</span></div>
-                                        <span class="money" data-krw="1350000">1,350,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
-                                        <div>Living Support<span class="fin-sub">Cash Refund (Sem 1)</span></div>
-                                        <span class="money" data-krw="-650000">-650,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Living Expenses<span class="fin-sub">4 Mo (Low Cost)</span></div>
-                                        <span class="money" data-krw="1600000">1,600,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Insur + App Fee<span class="fin-sub">Misc</span></div>
-                                        <span class="money" data-krw="230000">230,000 KRW</span>
-                                    </div>
-                                    <div class="fin-total">
-                                        <span>NET LAUNCH COST</span>
-                                        <span class="money" data-krw="4987000">4,987,000 KRW</span>
+                                    <div class="fin-col-title">🚀 MISSION LAUNCH (Sem 1 w/ Schol Only)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Flight Ticket<span class="fin-sub">Est. One-way</span></div>
+                                            <span class="money" data-krw="900000">900,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Tuition (Type 3)<span class="fin-sub">IELTS 7.5 (Tuition Fee 2
+                                                    Waiver)</span></div>
+                                            <span class="money" data-krw="1557000">1,557,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
+                                            <div>Scholarship Benefit<span class="fin-sub">Type 3 (50% Fee 2
+                                                    Waiver)</span></div>
+                                            <span class="money" data-krw="-1147000">-1,147,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Dorm (Chambit)<span class="fin-sub">Inc. M-F Meals (Est)</span></div>
+                                            <span class="money" data-krw="1350000">1,350,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Insur + App Fee<span class="fin-sub">Misc</span></div>
+                                            <span class="money" data-krw="230000">230,000 KRW</span>
+                                        </div>
+                                        <div class="fin-total">
+                                            <span>NET LAUNCH COST</span>
+                                            <span class="money" data-krw="2890000">2,890,000 KRW</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- PHASE 2: SEMESTER 2 -->
                                 <div class="fin-card">
-                                    <div class="fin-col-title">🏁 SEMESTER 2<br>(Includes 2nd Cash Pay)</div>
-                                    <div class="fin-row">
-                                        <div>Tuition (Sem 2)<span class="fin-sub">Base Cost (No Schol)</span></div>
-                                        <span class="money" data-krw="2704000">2,704,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Dorm (Chambit)<span class="fin-sub">Renewal</span></div>
-                                        <span class="money" data-krw="1350000">1,350,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
-                                        <div>Living Support<span class="fin-sub">Cash Refund (Sem 2)</span></div>
-                                        <span class="money" data-krw="-650000">-650,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Living Expenses<span class="fin-sub">4 Months</span></div>
-                                        <span class="money" data-krw="1600000">1,600,000 KRW</span>
-                                    </div>
-                                    <div class="fin-total"
-                                        style="border-color:var(--border-dim); color:var(--text-main);">
-                                        <span>SEM 2 NET COST</span>
-                                        <span class="money" data-krw="5004000">5,004,000 KRW</span>
+                                    <div class="fin-col-title">🏁 SEMESTER 2 (Includes Cash Incentive)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Tuition (Sem 2)<span class="fin-sub">Base Cost (No Schol)</span></div>
+                                            <span class="money" data-krw="2704000">2,704,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Dorm (Chambit)<span class="fin-sub">Renewal</span></div>
+                                            <span class="money" data-krw="1350000">1,350,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
+                                            <div>Living Support<span class="fin-sub">Cash Incentive (Sem 2)</span></div>
+                                            <span class="money" data-krw="-650000">-650,000 KRW</span>
+                                        </div>
+                                        <div class="fin-total"
+                                            style="border-color:var(--border-dim); color:var(--text-main);">
+                                            <span>SEM 2 NET COST</span>
+                                            <span class="money" data-krw="3404000">3,404,000 KRW</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- PHASE 3: YEAR 2+ ANNUAL -->
                                 <div class="fin-card">
-                                    <div class="fin-col-title">🏢 YEAR 2+ ANNUAL<br>(No Support Cash)</div>
-                                    <div class="fin-row">
-                                        <div>Tuition (Annual)<span class="fin-sub">2 Semesters</span></div>
-                                        <span class="money" data-krw="5408000">5,408,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Dorm (Yearly)<span class="fin-sub">12 Mo (Inc. Vacation)</span></div>
-                                        <span class="money" data-krw="4000000">4,000,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Living Expenses<span class="fin-sub">12 Mo (Low Cost)</span></div>
-                                        <span class="money" data-krw="3840000">3,840,000 KRW</span>
-                                    </div>
-                                    <div class="fin-total"
-                                        style="border-color:var(--border-dim); color:var(--text-main);">
-                                        <span>ANNUAL OPS</span>
-                                        <span class="money" data-krw="13248000">13,248,000 KRW</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- LIVING EXPENSES DEEP DIVE -->
-                        <div class="glass-panel">
-                            <div class="panel-header">Life Support: The Chambit Hall Advantage</div>
-                            <div class="living-grid">
-
-                                <!-- COLUMN 1: UNIT ANALYSIS -->
-                                <div class="unit-card">
-                                    <div class="unit-header">MONTHLY UNIT ANALYSIS (JBNU JEONJU)</div>
-                                    <div class="unit-row">
-                                        <div>Weekday Meals<span class="fin-sub">Covered by Dorm Fee</span></div>
-                                        <span class="money" data-krw="0">0 KRW</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Weekend Meals<span class="fin-sub">~8 Days/Mo @ 10k</span></div>
-                                        <span class="money" data-krw="80000">80,000 KRW</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Snacks / Coffee<span class="fin-sub">Moderate</span></div>
-                                        <span class="money" data-krw="100000">100,000 KRW</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Mobile Data (Sim)<span class="fin-sub">Essential</span></div>
-                                        <span class="money" data-krw="35000">35,000 KRW</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Bus/Transport<span class="fin-sub">Campus is walkable</span></div>
-                                        <span class="money" data-krw="20000">20,000 KRW</span>
-                                    </div>
-                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
-                                        <div>Mandatory NHIS Insur.<span class="fin-sub">Visa Requirement</span></div>
-                                        <span class="money" data-krw="76390">76,390 KRW</span>
-                                    </div>
-                                    <div class="unit-total">
-                                        <span>ESTIMATED TOTAL</span>
-                                        <span class="money" data-krw="311390">311,390 KRW</span>
-                                    </div>
-                                    <div class="unit-note">
-                                        *Because Chambit Hall includes food, your monthly cash requirement is extremely
-                                        low
-                                        compared to other universities.
-                                    </div>
-                                </div>
-
-                                <!-- COLUMN 2: THE COMPARISON -->
-                                <div class="comparison-card">
-                                    <div
-                                        style="font-family:'Space Grotesk'; font-size:1.2rem; color:#fff; margin-bottom:10px;">
-                                        JBNU Dorm Strategy</div>
-
-                                    <!-- CHAMBIT MODE -->
-                                    <div>
-                                        <div class="mode-row">
-                                            <span style="font-size:0.8rem; color:var(--gold-primary);">CHAMBIT HALL
-                                                (Meal
-                                                Plan)</span>
-                                            <span class="money" data-krw="320000">~320k KRW / Mo</span>
+                                    <div class="fin-col-title">🏢 YEAR 2+ ANNUAL (Includes Cash Incentive)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Tuition (Annual)<span class="fin-sub">2 Semesters</span></div>
+                                            <span class="money" data-krw="5408000">5,408,000 KRW</span>
                                         </div>
-                                        <div class="mode-bar" style="background:rgba(220, 38, 38, 0.1);">
-                                            <div class="mode-fill" style="width:40%; background:var(--gold-primary);">
+                                        <div class="fin-row">
+                                            <div>Dorm (Yearly)<span class="fin-sub">12 Mo (Inc. Vacation)</span></div>
+                                            <span class="money" data-krw="4000000">4,000,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row" style="color:var(--teal-accent); font-weight:700;">
+                                            <div>Living Support<span class="fin-sub">Cash Incentive (2 Semesters)</span>
                                             </div>
+                                            <span class="money" data-krw="-1300000">-1,300,000 KRW</span>
                                         </div>
-                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">High
-                                            Upfront
-                                            (Dorm Fee) but Low Monthly Stress.</div>
+                                        <div class="fin-total"
+                                            style="border-color:var(--border-dim); color:var(--text-main);">
+                                            <span>ANNUAL OPS</span>
+                                            <span class="money" data-krw="8108000">8,108,000 KRW</span>
+                                        </div>
                                     </div>
-
-                                    <!-- COOKING MODE -->
-                                    <div>
-                                        <div class="mode-row">
-                                            <span style="font-size:0.8rem; color:var(--text-muted);">PRIVATE HOUSING
-                                                (Cooking)</span>
-                                            <span class="money" data-krw="600000">~600k KRW / Mo</span>
-                                        </div>
-                                        <div class="mode-bar" style="background:rgba(255,255,255,0.1);">
-                                            <div class="mode-fill" style="width:80%; background:#888;"></div>
-                                        </div>
-                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Higher
-                                            monthly cash flow needed for groceries/rent.</div>
-                                    </div>
-
                                 </div>
 
                             </div>
                         </div>
 
+
+                    </div>
+
+                    <!-- SCHOLARSHIP CATEGORY -->
+                    <div id="scholarship-content" class="category-content">
                         <!-- SCHOLARSHIP INTELLIGENCE CENTER -->
                         <div class="glass-panel">
                             <div class="panel-header">Scholarship Intelligence (PDF Pg 17)</div>
@@ -382,9 +362,9 @@
                                         <div class="gpa-bar-fill bar-gold"></div>
                                     </div>
                                     <div class="fin-sub" style="margin-bottom:15px;">
-                                        Waives 50% of Tuition II. <br>
-                                        Engineering: 2.29M -> 1.14M Waiver.<br>
-                                        <strong>You Pay: ~1.55M KRW total.</strong>
+                                        Waives 50% of Tuition Fee II only (not complete tuition). <br>
+                                        Engineering: 2.29M -> 1.14M Waiver on Fee II.<br>
+                                        <strong>You Pay: ~1.55M KRW total (includes Fee I + reduced Fee II).</strong>
                                     </div>
 
                                     <!-- TYPE 5 TARGET -->
@@ -428,6 +408,372 @@
                                     <div class="fin-sub">Specific amounts depend on department ranking.</div>
                                 </div>
 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DORMITORY CATEGORY -->
+                    <div id="dormitory-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">Dormitory Facilities</div>
+                            <div class="dorm-grid">
+                                <!-- CHAMBIT HALL -->
+                                <div class="dorm-card interactable">
+                                    <div class="dorm-header">
+                                        <div class="dorm-name">Chambit Hall</div>
+                                        <div class="dorm-badge">Recommended</div>
+                                    </div>
+                                    <div class="dorm-body">
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Meal Plan Included</div>
+                                                <div class="dorm-desc">3 meals per day (Monday-Friday) included in
+                                                    dormitory fee</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Campus Proximity</div>
+                                                <div class="dorm-desc">Located on main Jeonju campus, walking distance
+                                                    to classes</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Modern Facilities</div>
+                                                <div class="dorm-desc">Recently renovated with study rooms and
+                                                    recreation areas</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-price"
+                                            style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                                                <div class="dorm-price-label">Semester (6 Mo)</div>
+                                                <div class="dorm-price-value" style="font-size: 1rem;"><span
+                                                        class="money" data-krw="1350000">1,350,000 KRW</span></div>
+                                            </div>
+                                            <div
+                                                style="display: flex; justify-content: space-between; width: 100%; border-top: 1px dashed var(--border-dim); padding-top: 8px;">
+                                                <div class="dorm-price-label">Annual (12 Mo)</div>
+                                                <div class="dorm-price-value"><span class="money"
+                                                        data-krw="2700000">2,700,000 KRW</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DAEDONG HALL -->
+                                <div class="dorm-card interactable">
+                                    <div class="dorm-header">
+                                        <div class="dorm-name">Daedong Hall</div>
+                                        <div class="dorm-badge">No Meal Plan</div>
+                                    </div>
+                                    <div class="dorm-body">
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Budget Friendly</div>
+                                                <div class="dorm-desc">More affordable accommodation option</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Standard Amenities</div>
+                                                <div class="dorm-desc">Double occupancy with desk, chair, closet</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Public Facilities</div>
+                                                <div class="dorm-desc">Public restroom and shower room (No elevator)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-price"
+                                            style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                                                <div class="dorm-price-label">Semester (6 Mo)</div>
+                                                <div class="dorm-price-value" style="font-size: 1rem;"><span
+                                                        class="money" data-krw="643000">643,000 KRW</span></div>
+                                            </div>
+                                            <div
+                                                style="display: flex; justify-content: space-between; width: 100%; border-top: 1px dashed var(--border-dim); padding-top: 8px;">
+                                                <div class="dorm-price-label">Annual (12 Mo)</div>
+                                                <div class="dorm-price-value"><span class="money"
+                                                        data-krw="1286000">1,286,000 KRW</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="dorm-comparison">
+                            <div class="dorm-comparison-header">Dormitory Comparison</div>
+                            <table class="dorm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Chambit Hall</th>
+                                        <th>Daedong Hall</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>Jeonju Campus</td>
+                                        <td>Jeonju Campus</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meal Plan</td>
+                                        <td>Included (3 Meals/Day M-F)</td>
+                                        <td>No Meal Plan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Room Type</td>
+                                        <td>Double (Private Bath)</td>
+                                        <td>Double (Public Bath)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Semester Cost</td>
+                                        <td><span class="money" data-krw="1350000">1,350,000 KRW</span></td>
+                                        <td><span class="money" data-krw="643000">643,000 KRW</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Application</td>
+                                        <td>With Admission</td>
+                                        <td>With Admission</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="dorm-note">
+                                <strong>Note:</strong> Tuberculosis test required before semester start. Housing
+                                application cancelled if payment deadline missed. Inquiry: http://likehome.jbnu.ac.kr /
+                                063-270-4723.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- MONTHLY EXPENSES CATEGORY -->
+                    <div id="monthly-expenses-content" class="category-content">
+                        <!-- LIVING EXPENSES DEEP DIVE -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Life Support: Monthly Breakdown Strategy</div>
+                            <div class="living-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <!-- COLUMN 1: CHAMBIT HALL (MEAL PLAN) -->
+                                <div class="unit-card">
+                                    <div class="unit-header">CHAMBIT HALL (MEAL PLAN)</div>
+                                    <div class="unit-row">
+                                        <div>Meals (Mon-Fri)<span class="fin-sub">Included in Dorm Fee</span></div>
+                                        <span class="money" data-krw="0">0 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Weekend Meals<span class="fin-sub">~8 Days/Mo @ 10k</span></div>
+                                        <span class="money" data-krw="80000">80,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Snacks / Coffee<span class="fin-sub">Moderate</span></div>
+                                        <span class="money" data-krw="100000">100,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Mobile Data<span class="fin-sub">Essential</span></div>
+                                        <span class="money" data-krw="35000">35,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Bus/Transport<span class="fin-sub">Campus is walkable</span></div>
+                                        <span class="money" data-krw="20000">20,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
+                                        <div>Mandatory NHIS<span class="fin-sub">Visa Requirement</span></div>
+                                        <span class="money" data-krw="76390">76,390 KRW</span>
+                                    </div>
+                                    <div class="unit-total">
+                                        <span>EST. MONTHLY</span>
+                                        <span class="money" data-krw="311390">~312,000 KRW</span>
+                                    </div>
+                                    <div class="unit-note" style="color: var(--gold-primary);">
+                                        *Low monthly cash flow required because main meals are pre-paid.
+                                    </div>
+                                </div>
+
+                                <!-- COLUMN 2: DAEDONG HALL (NO MEAL PLAN) -->
+                                <div class="unit-card" style="border-color: var(--text-muted);">
+                                    <div class="unit-header" style="color: var(--text-muted);">DAEDONG HALL (NO MEAL
+                                        PLAN)</div>
+                                    <div class="unit-row">
+                                        <div>Daily Meals<span class="fin-sub">30 Days @ ~12k/day</span></div>
+                                        <span class="money" data-krw="360000">360,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Eating Out<span class="fin-sub">Occasional</span></div>
+                                        <span class="money" data-krw="100000">100,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Snacks / Coffee<span class="fin-sub">Moderate</span></div>
+                                        <span class="money" data-krw="100000">100,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Mobile Data<span class="fin-sub">Essential</span></div>
+                                        <span class="money" data-krw="35000">35,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Bus/Transport<span class="fin-sub">Campus is walkable</span></div>
+                                        <span class="money" data-krw="20000">20,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
+                                        <div>Mandatory NHIS<span class="fin-sub">Visa Requirement</span></div>
+                                        <span class="money" data-krw="76390">76,390 KRW</span>
+                                    </div>
+                                    <div class="unit-total" style="color: var(--text-main);">
+                                        <span>EST. MONTHLY</span>
+                                        <span class="money" data-krw="691390">~692,000 KRW</span>
+                                    </div>
+                                    <div class="unit-note">
+                                        *Higher monthly cash flow needed for food since no meal plan is included.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- TOTAL ANNUAL BREAKDOWN -->
+                        <div class="glass-panel" style="margin-top: 30px; border-color: var(--gold-primary);">
+                            <div class="panel-header" style="color: var(--gold-primary);">Scenario A: Recommended Track
+                                (Chambit Hall)</div>
+                            <div class="breakdown-list">
+                                <!-- ITEM 1: TUITION -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">1. Tuition</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="5408000">5,408,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="2704000">2,704,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="2704000">2,704,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 2: DORMITORY -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">2. Dormitory</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="2700000">2,700,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1 (Est)</span>
+                                        <span class="sub-val money" data-krw="1350000">1,350,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2 (Est)</span>
+                                        <span class="sub-val money" data-krw="1350000">1,350,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 3: LIVING EXPENSES -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">3. Living Expenses</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="3840000">3,840,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Monthly Average</span>
+                                        <span class="sub-val money" data-krw="320000">~320,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Duration</span>
+                                        <span class="sub-val">12 Months</span>
+                                    </div>
+                                </div>
+
+                                <div class="fin-total"
+                                    style="margin-top: 10px; font-size: 1.4rem; color: var(--gold-primary); padding-top: 10px; border-top: none;">
+                                    <span>GRAND TOTAL (Scenario A)</span>
+                                    <span class="money" data-krw="11948000">11,948,000 KRW</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCENARIO B: DAEDONG HALL -->
+                        <div class="glass-panel" style="margin-top: 30px; border-color: var(--text-muted);">
+                            <div class="panel-header" style="color: var(--text-main);">Scenario B: Budget Track (Daedong
+                                Hall)</div>
+                            <div class="breakdown-list">
+                                <!-- ITEM 1: TUITION -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">1. Tuition</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="5408000">5,408,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="2704000">2,704,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="2704000">2,704,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 2: DORMITORY -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">2. Dormitory (Daedong)</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="1286000">1,286,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="643000">643,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="643000">643,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 3: LIVING EXPENSES -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">3. Living Expenses</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="7080000">7,080,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row" style="color: var(--gold-primary);">
+                                        <span class="sub-label">Extra Meal Costs</span>
+                                        <span class="sub-val">Meals NOT included</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Monthly Average</span>
+                                        <span class="sub-val money" data-krw="590000">~590,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Duration</span>
+                                        <span class="sub-val">12 Months</span>
+                                    </div>
+                                </div>
+
+                                <div class="fin-total"
+                                    style="margin-top: 10px; font-size: 1.4rem; color: var(--text-main); padding-top: 10px; border-top: none;">
+                                    <span>GRAND TOTAL (Scenario B)</span>
+                                    <span class="money" data-krw="13774000">13,774,000 KRW</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -539,52 +885,65 @@
 
                     <!-- CONTACT CATEGORY -->
                     <div id="contact-content" class="category-content">
-                        <div class="glass-panel">
-                            <div class="panel-header">Application Support & Contact Information</div>
-                            <div class="doc-columns">
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">💳 Application Details</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Application Fee</span>
-                                            <span class="money" data-krw="80000">80,000 KRW</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Submission Type</span>
-                                            <span class="badge badge-gray">POSTAL</span>
-                                        </div>
-                                        <div class="note">Application via Uway/JBNU website. Docs via post.</div>
-                                    </div>
-                                </div>
+                        <div class="doc-section-title">📦 Contact Information (PDF Pg 6)</div>
+                        <div class="doc-columns">
 
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">📍 Submission Address</div>
-                                    <div class="doc-body">
-                                        <div style="font-family:'JetBrains Mono'; font-size:0.8rem; line-height:1.6;">
-                                            Office of International Affairs,<br>
-                                            International Center 3rd Floor,<br>
-                                            Jeonbuk National University,<br>
-                                            567 Baekje-daero, Deokjin-gu,<br>
-                                            Jeonju-si, Jeollabuk-do,<br>
-                                            54896 Republic of Korea
-                                        </div>
+                            <!-- COL 1: APPLICATION DETAILS -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">💳 Application Details</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Application Fee
+                                        </span>
+                                        <span class="badge badge-gold">80,000 KRW</span>
                                     </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Submission Method
+                                        </span>
+                                        <span class="badge badge-gray">POSTAL</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Online Portal
+                                        </span>
+                                        <span class="badge badge-teal">UWAY/JBNU</span>
+                                    </div>
+                                    <div class="note">Application via Uway/JBNU website. Documents via post.</div>
                                 </div>
+                            </div>
 
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">📞 Contact Channels</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Phone</span>
-                                            <span>+82-63-270-4653</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Email</span>
-                                            <span>admissionu@jbnu.ac.kr</span>
-                                        </div>
+
+                            <!-- COL 3: CONTACT CHANNELS -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">📞 Contact Channels</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Phone
+                                        </span>
+                                        <span class="badge badge-gold">+82-63-270-4653</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Email
+                                        </span>
+                                        <span class="badge badge-teal">admissionu@jbnu.ac.kr</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Office Hours
+                                        </span>
+                                        <span class="badge badge-gray">Mon-Fri 9AM-5PM</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>Response Time:</strong> 2-3 business days<br>
+                                        <strong>Language:</strong> English/Korean support available
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -605,7 +964,11 @@
                                             JBNU provides a unique living support fund for international students. You
                                             receive approximately <strong>650,000 KRW in cash</strong> during Semester
                                             1, and another <strong>650,000 KRW</strong> during Semester 2, totaling ~1.3
-                                            Million KRW. This offsets your initial costs significantly.
+                                            Million KRW. <strong>Important:</strong> This is paid out after you arrive
+                                            in Korea
+                                            and create a Korean bank account, so it's not included in the initial launch
+                                            budget
+                                            but helps with ongoing living expenses.
                                         </div>
                                     </div>
                                 </div>
@@ -622,10 +985,12 @@
                                         <div class="faq-answer">
                                             Freshman scholarships are based on your language score.
                                             <strong>Type 3 (IELTS 7.5 or TOPIK 4)</strong> waives 50% of Tuition II (the
-                                            expensive part).
+                                            expensive part) only.
                                             <strong>Type 5</strong> waives 100% of Tuition I (the cheaper part).
                                             Your IELTS 7.5 qualifies you for Type 3, which is the best value for
-                                            Engineering majors.
+                                            Engineering majors. Note: The Type 3 scholarship only applies to Tuition Fee
+                                            2,
+                                            not the complete tuition.
                                         </div>
                                     </div>
                                 </div>
@@ -678,6 +1043,49 @@
                                             No. JBNU strictly requires Apostille (or Consular Authentication) for your
                                             High School Diploma and Transcripts. These must be submitted by the
                                             deadline.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Academic Eligibility & Study Gap -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Does a study gap (approx. 5–6 years) or a lower HSSC score (60%) disqualify me
+                                        from admission?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            No. Your academic background (SSC 92% and HSSC 60%) meets the basic
+                                            eligibility requirements. Regarding the study gap, it is not considered
+                                            disadvantageous, especially since you have a valid reason (supporting your
+                                            family) and professional experience.
+                                            Note: While your IELTS 7.5 is excellent, it primarily benefits English-track
+                                            applications.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Language Tracks (English vs. Korean) -->
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Are majors like Computer Science, AI, Electrical, or Electronic Engineering
+                                        offered as English-track programs?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            No. All these majors (CS, AI, Electrical, Electronic Engineering) are
+                                            strictly Korean-track.
+                                            The only designated English-track units at JBNU are:
+                                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                                <li>School of International Studies</li>
+                                                <li>School of International Engineering & Science</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

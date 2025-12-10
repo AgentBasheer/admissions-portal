@@ -65,6 +65,9 @@
                 <div class="category-tab active" onclick="showCategory('overview')">📊 Overview</div>
                 <div class="category-tab" onclick="showCategory('academic')">🎓 Academic</div>
                 <div class="category-tab" onclick="showCategory('financial')">💰 Financial</div>
+                <div class="category-tab" onclick="showCategory('scholarship')">🎓 Scholarship</div>
+                <div class="category-tab" onclick="showCategory('dormitory')">🏠 Dormitory</div>
+                <div class="category-tab" onclick="showCategory('monthly-expenses')">💸 Expenses</div>
                 <div class="category-tab" onclick="showCategory('documents')">📦 Documents</div>
                 <div class="category-tab" onclick="showCategory('contact')">📞 Contact</div>
                 <div class="category-tab" onclick="showCategory('faq')">❓ FAQ</div>
@@ -138,130 +141,178 @@
 
                     <!-- ACADEMIC CATEGORY -->
                     <div id="academic-content" class="category-content">
-                        <!-- RECOMMENDED MAJORS SECTION -->
-                        <div class="glass-panel">
-                            <div class="panel-header">Recommended Majors</div>
-                            <div class="doc-columns">
+                        <div class="doc-section-title">🎓 Academic Programs (PDF Pg 8)</div>
+                        <div class="doc-columns">
 
-                                <!-- MAJOR 1: School of Electronic and Computer Engineering -->
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">🎓 School of Electronic and Computer Engineering</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Campus</span>
-                                            <span class="badge badge-gold">Gwangju Campus</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">College</span>
-                                            <span>Engineering</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">What it is</span>
-                                        </div>
-                                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
-                                            Covers Electronics, Hardware, Software, and Control Systems (fundamental for
-                                            Robotics)
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Evaluation Type</span>
-                                            <span class="badge badge-teal">Documents Screening ONLY</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Risk Level</span>
-                                            <span style="color: var(--teal-accent); font-weight: 700;">✅ Low
-                                                (Safe)</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Contact</span>
-                                            <span>062-530-1751</span>
-                                        </div>
-                                        <div class="note">
-                                            No interview required. Your IELTS 7.5 does all the work.
-                                        </div>
+                            <!-- MAJOR 1: School of Electronic and Computer Engineering -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">🎓 School of Electronic and Computer Engineering</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Campus
+                                        </span>
+                                        <span class="badge badge-gold">Gwangju Campus</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> College
+                                        </span>
+                                        <span>Engineering</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Description
+                                        </span>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                                        Covers Electronics, Hardware, Software, and Control Systems (fundamental for
+                                        Robotics)
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Evaluation Type
+                                        </span>
+                                        <span class="badge badge-teal">Documents Screening ONLY</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Risk Level
+                                        </span>
+                                        <span style="color: var(--teal-accent); font-weight: 700;">✅ Low (Safe)</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Contact
+                                        </span>
+                                        <span>062-530-1751</span>
+                                    </div>
+                                    <div class="note">
+                                        No interview required. Your IELTS 7.5 does all the work.
                                     </div>
                                 </div>
-
-                                <!-- MAJOR 2: Engineering Open Major -->
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">🎓 Engineering Open Major</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Campus</span>
-                                            <span class="badge badge-gold">Yeosu Campus</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">College</span>
-                                            <span>Engineering</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">What it is</span>
-                                        </div>
-                                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
-                                            Flexible engineering program allowing specialization after foundational
-                                            studies
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Evaluation Type</span>
-                                            <span class="badge badge-teal">Documents Screening ONLY</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Risk Level</span>
-                                            <span style="color: var(--teal-accent); font-weight: 700;">✅ Low
-                                                (Safe)</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Contact</span>
-                                            <span>061-659-7207</span>
-                                        </div>
-                                        <div class="note">
-                                            Page 4 of Screening PDF. No interview required.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MAJOR 3: Additional Engineering Major -->
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">🎓 Additional Engineering Major</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Campus</span>
-                                            <span class="badge badge-gold">Gwangju Campus</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">College</span>
-                                            <span>Engineering</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">What it is</span>
-                                        </div>
-                                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
-                                            Engineering program with document screening only evaluation
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Evaluation Type</span>
-                                            <span class="badge badge-teal">Documents Screening ONLY</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Risk Level</span>
-                                            <span style="color: var(--teal-accent); font-weight: 700;">✅ Low
-                                                (Safe)</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Contact</span>
-                                            <span>062-530-1751</span>
-                                        </div>
-                                        <div class="note">
-                                            Page 1 of Screening PDF. No interview required.
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
+
+                            <!-- MAJOR 2: Engineering Open Major -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">🎓 Engineering Open Major</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Campus
+                                        </span>
+                                        <span class="badge badge-gold">Yeosu Campus</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> College
+                                        </span>
+                                        <span>Engineering</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Description
+                                        </span>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                                        Flexible engineering program allowing specialization after foundational studies
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Evaluation Type
+                                        </span>
+                                        <span class="badge badge-teal">Documents Screening ONLY</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Risk Level
+                                        </span>
+                                        <span style="color: var(--teal-accent); font-weight: 700;">✅ Low (Safe)</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Contact
+                                        </span>
+                                        <span>061-659-7207</span>
+                                    </div>
+                                    <div class="note">
+                                        Page 4 of Screening PDF. No interview required.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MAJOR 3: Additional Engineering Major -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">🎓 Additional Engineering Major</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Campus
+                                        </span>
+                                        <span class="badge badge-gold">Gwangju Campus</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> College
+                                        </span>
+                                        <span>Engineering</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Description
+                                        </span>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                                        Engineering program with document screening only evaluation
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Evaluation Type
+                                        </span>
+                                        <span class="badge badge-teal">Documents Screening ONLY</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Risk Level
+                                        </span>
+                                        <span style="color: var(--teal-accent); font-weight: 700;">✅ Low (Safe)</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Contact
+                                        </span>
+                                        <span>062-530-1751</span>
+                                    </div>
+                                    <div class="note">
+                                        Page 1 of Screening PDF. No interview required.
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     <!-- FINANCIAL CATEGORY -->
                     <div id="financial-content" class="category-content">
+                        <!-- FINANCIAL OVERVIEW CARDS -->
+                        <div class="tactical-grid">
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Application Fee</div>
+                                <div class="tac-value"><span class="money" data-krw="70000">70,000 KRW</span></div>
+                                <div class="tac-sub">Non-refundable. Paid via UwayApply.</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Tuition Fee Total</div>
+                                <div class="tac-value"><span class="money" data-krw="2352000">2.35M KRW</span></div>
+                                <div class="tac-sub">Per semester before scholarships. Includes entrance fee.</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Dormitory Fee</div>
+                                <div class="tac-value"><span class="money" data-krw="614800">614,800 KRW</span></div>
+                                <div class="tac-sub">Yeosu Campus (6 months). Gwangju: 1.90M KRW/year.</div>
+                            </div>
+                        </div>
+
                         <!-- FINANCIAL INTELLIGENCE PANEL (3 PHASES) -->
                         <div class="glass-panel">
                             <div class="panel-header">Financial Intelligence (Engineering/AI)</div>
@@ -269,175 +320,74 @@
 
                                 <!-- PHASE 1: LAUNCH -->
                                 <div class="fin-card highlight">
-                                    <div class="fin-col-title">🚀 MISSION LAUNCH<br>(PK → Korea + Sem 1)</div>
-                                    <div class="fin-row">
-                                        <div>Flight Ticket<span class="fin-sub">Est. One-way</span></div>
-                                        <span class="money" data-krw="900000">900,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Tuition + Entrance<span class="fin-sub">Sem 1 Fees</span></div>
-                                        <span class="money" data-krw="2440000">2,440,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Dorm (Yeo-su)<span class="fin-sub">6 Months</span></div>
-                                        <span class="money" data-krw="614800">614,800 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Living Expenses<span class="fin-sub">6 Mo @ 465k/mo</span></div>
-                                        <span class="money" data-krw="2790000">2,790,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Insur + App Fee<span class="fin-sub">Misc</span></div>
-                                        <span class="money" data-krw="140000">140,000 KRW</span>
-                                    </div>
-                                    <div class="fin-total">
-                                        <span>REQ CASH</span>
-                                        <span class="money" data-krw="6884800">6,884,800 KRW</span>
+                                    <div class="fin-col-title">🚀 MISSION LAUNCH (PK → Korea + Sem 1)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Flight Ticket<span class="fin-sub">Est. One-way</span></div>
+                                            <span class="money" data-krw="900000">900,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Tuition + Entrance<span class="fin-sub">Sem 1 Fees</span></div>
+                                            <span class="money" data-krw="2829000">2,829,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Dorm (Yeo-su)<span class="fin-sub">6 Months</span></div>
+                                            <span class="money" data-krw="614800">614,800 KRW</span>
+                                        </div>
+                                        <div class="fin-total">
+                                            <span>REQ CASH</span>
+                                            <span class="money" data-krw="4343800">4,343,800 KRW</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- PHASE 2: YEAR 1 FINISH -->
                                 <div class="fin-card">
-                                    <div class="fin-col-title">🏁 YEAR 1 FINISH<br>(Semester 2)</div>
-                                    <div class="fin-row">
-                                        <div>Tuition (Sem 2)<span class="fin-sub">Engineering</span></div>
-                                        <span class="money" data-krw="1963000">1,963,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Dorm (Yeo-su)<span class="fin-sub">6 Months</span></div>
-                                        <span class="money" data-krw="614800">614,800 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Living Expenses<span class="fin-sub">6 Mo @ 465k/mo</span></div>
-                                        <span class="money" data-krw="2790000">2,790,000 KRW</span>
-                                    </div>
-                                    <div class="fin-total"
-                                        style="border-color:var(--border-dim); color:var(--text-main);">
-                                        <span>SEM 2 COST</span>
-                                        <span class="money" data-krw="5367800">5,367,800 KRW</span>
+                                    <div class="fin-col-title">🏁 YEAR 1 FINISH (Semester 2)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Tuition (Sem 2)<span class="fin-sub">Engineering</span></div>
+                                            <span class="money" data-krw="2352000">2,352,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Dorm (Yeo-su)<span class="fin-sub">6 Months</span></div>
+                                            <span class="money" data-krw="614800">614,800 KRW</span>
+                                        </div>
+                                        <div class="fin-total"
+                                            style="border-color:var(--border-dim); color:var(--text-main);">
+                                            <span>SEM 2 COST</span>
+                                            <span class="money" data-krw="2966800">2,966,800 KRW</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- PHASE 3: YEAR 2+ -->
                                 <div class="fin-card">
-                                    <div class="fin-col-title">🏢 YEAR 2+ ANNUAL<br>(Gwangju Campus)</div>
-                                    <div class="fin-row">
-                                        <div>Tuition (Annual)<span class="fin-sub">2 Semesters</span></div>
-                                        <span class="money" data-krw="3926000">3,926,000 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Dorm (Gwangju)<span class="fin-sub">12 Months (Higher)</span></div>
-                                        <span class="money" data-krw="2043600">2,043,600 KRW</span>
-                                    </div>
-                                    <div class="fin-row">
-                                        <div>Living Expenses<span class="fin-sub">12 Mo @ 465k/mo</span></div>
-                                        <span class="money" data-krw="5580000">5,580,000 KRW</span>
-                                    </div>
-                                    <div class="fin-total"
-                                        style="border-color:var(--border-dim); color:var(--text-main);">
-                                        <span>ANNUAL OPS</span>
-                                        <span class="money" data-krw="11549600">11,549,600 KRW</span>
+                                    <div class="fin-col-title">🏢 YEAR 2+ ANNUAL (Gwangju Campus)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Tuition (Annual)<span class="fin-sub">2 Semesters</span></div>
+                                            <span class="money" data-krw="4704000">4,704,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Dorm (Gwangju)<span class="fin-sub">12 Months (Higher)</span></div>
+                                            <span class="money" data-krw="1898000">1,898,000 KRW</span>
+                                        </div>
+                                        <div class="fin-total"
+                                            style="border-color:var(--border-dim); color:var(--text-main);">
+                                            <span>ANNUAL OPS</span>
+                                            <span class="money" data-krw="6602000">6,602,000 KRW</span>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
 
-                        <!-- LIVING EXPENSES DEEP DIVE -->
-                        <div class="glass-panel">
-                            <div class="panel-header">Life Support Systems (Monthly Deep Dive)</div>
-                            <div class="living-grid">
+                    </div>
 
-                                <!-- COLUMN 1: UNIT ANALYSIS -->
-                                <div class="unit-card">
-                                    <div class="unit-header">MONTHLY UNIT ANALYSIS (MUSLIM FRIENDLY)</div>
-                                    <div class="unit-row">
-                                        <div>Halal Groceries<span class="fin-sub">Cooking in Dorm</span></div>
-                                        <span class="money" data-krw="280000">280,000</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>School Cafe/Snacks<span class="fin-sub">Safe Options Only</span></div>
-                                        <span class="money" data-krw="50000">50,000</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Dorm WiFi/Internet<span class="fin-sub">Included in Fee</span></div>
-                                        <span class="money" data-krw="0">0</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Mobile Data (Sim)<span class="fin-sub">Essential</span></div>
-                                        <span class="money" data-krw="35000">35,000</span>
-                                    </div>
-                                    <div class="unit-row">
-                                        <div>Transport<span class="fin-sub">Bus/Mosque</span></div>
-                                        <span class="money" data-krw="30000">30,000</span>
-                                    </div>
-                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
-                                        <div>Mandatory NHIS Insur.<span class="fin-sub">Visa Requirement</span></div>
-                                        <span class="money" data-krw="70000">70,000</span>
-                                    </div>
-                                    <div class="unit-total">
-                                        <span>ESTIMATED TOTAL</span>
-                                        <span class="money" data-krw="465000">465,000</span>
-                                    </div>
-                                    <div class="unit-note">
-                                        *Yeo-su Campus (Year 1) has a Halal Friendly Kitchen. This drastically reduces
-                                        food costs compared to eating out.
-                                    </div>
-                                </div>
-
-                                <!-- COLUMN 2: THE COMPARISON -->
-                                <div class="comparison-card">
-                                    <div
-                                        style="font-family:'Space Grotesk'; font-size:1.2rem; color:#fff; margin-bottom:10px;">
-                                        Survival vs. Comfort</div>
-
-                                    <!-- MONK MODE -->
-                                    <div>
-                                        <div class="mode-row">
-                                            <span style="font-size:0.8rem; color:var(--teal-accent);">MONK MODE
-                                                (Survival)</span>
-                                            <span class="money" data-krw="465000">~465k KRW</span>
-                                        </div>
-                                        <div class="mode-bar" style="background:rgba(55,212,175,0.1);">
-                                            <div class="mode-fill" style="width:55%; background:var(--teal-accent);">
-                                            </div>
-                                        </div>
-                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Cooking
-                                            100% • Walking Only • No Snacks</div>
-                                    </div>
-
-                                    <!-- REALISTIC -->
-                                    <div>
-                                        <div class="mode-row">
-                                            <span style="font-size:0.8rem; color:var(--gold-primary);">REALISTIC (Muslim
-                                                Student)</span>
-                                            <span class="money" data-krw="520000">~520k KRW</span>
-                                        </div>
-                                        <div class="mode-bar" style="background:rgba(22, 163, 74, 0.1);">
-                                            <div class="mode-fill" style="width:65%; background:var(--gold-primary);">
-                                            </div>
-                                        </div>
-                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">
-                                            Occasional Halal Eating Out • Mosque Visits • Snacks</div>
-                                    </div>
-
-                                    <!-- COMFORT -->
-                                    <div>
-                                        <div class="mode-row">
-                                            <span style="font-size:0.8rem; color:var(--text-muted);">COMFORT (High
-                                                Life)</span>
-                                            <span class="money" data-krw="750000">~750k KRW</span>
-                                        </div>
-                                        <div class="mode-bar" style="background:rgba(255,255,255,0.1);">
-                                            <div class="mode-fill" style="width:90%; background:#888;"></div>
-                                        </div>
-                                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">Eating
-                                            Out Daily • Travel • Shopping</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <!-- SCHOLARSHIP CATEGORY -->
+                    <div id="scholarship-content" class="category-content">
                         <!-- SCHOLARSHIP INTELLIGENCE CENTER -->
                         <div class="glass-panel">
                             <div class="panel-header">Scholarship Intelligence</div>
@@ -467,7 +417,7 @@
                                     <!-- GPA TARGET 1 -->
                                     <div class="schol-target-row">
                                         <span style="color:#fff;">Target: Top 15% (GPA ~4.0+)</span>
-                                        <span class="money" data-krw="1963000">~1.9M KRW Saved</span>
+                                        <span class="money" data-krw="2352000">~2.35M KRW Saved</span>
                                     </div>
                                     <div class="gpa-bar-bg">
                                         <div class="gpa-bar-fill bar-gold"></div>
@@ -477,7 +427,7 @@
                                     <!-- GPA TARGET 2 -->
                                     <div class="schol-target-row">
                                         <span style="color:#fff;">Target: Top 30% (GPA ~3.5+)</span>
-                                        <span class="money" data-krw="980000">~980k KRW Saved</span>
+                                        <span class="money" data-krw="1176000">~1.18M KRW Saved</span>
                                     </div>
                                     <div class="gpa-bar-bg">
                                         <div class="gpa-bar-fill bar-teal"></div>
@@ -485,6 +435,152 @@
                                     <div class="fin-sub">Half Tuition Waiver (Most Realistic Goal)</div>
                                 </div>
 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DORMITORY CATEGORY -->
+                    <div id="dormitory-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">Dormitory Facilities</div>
+                            <div class="dorm-grid">
+                                <!-- YEOSU DORM -->
+                                <div class="dorm-card interactable">
+                                    <div class="dorm-header">
+                                        <div class="dorm-name">Yeosu Dormitory</div>
+                                        <div class="dorm-badge">Year 1</div>
+                                    </div>
+                                    <div class="dorm-body">
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Halal Friendly Kitchen</div>
+                                                <div class="dorm-desc">Dedicated kitchen facilities for Muslim students
+                                                    with halal food preparation areas</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">High Speed Internet</div>
+                                                <div class="dorm-desc">Both WiFi and LAN connections included in
+                                                    dormitory fee</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Utilities Included</div>
+                                                <div class="dorm-desc">Water, electricity, and heating covered by
+                                                    dormitory fee</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-price"
+                                            style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                                                <div class="dorm-price-label">Semester (6 Mo)</div>
+                                                <div class="dorm-price-value" style="font-size: 1rem;"><span
+                                                        class="money" data-krw="614800">614,800 KRW</span></div>
+                                            </div>
+                                            <div
+                                                style="display: flex; justify-content: space-between; width: 100%; border-top: 1px dashed var(--border-dim); padding-top: 8px;">
+                                                <div class="dorm-price-label">Annual (12 Mo)</div>
+                                                <div class="dorm-price-value"><span class="money"
+                                                        data-krw="1229600">1,229,600 KRW</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- GWANGJU DORM -->
+                                <div class="dorm-card interactable">
+                                    <div class="dorm-header">
+                                        <div class="dorm-name">Gwangju (Hall No. 8)</div>
+                                        <div class="dorm-badge">Year 2+</div>
+                                    </div>
+                                    <div class="dorm-body">
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Apartment Type</div>
+                                                <div class="dorm-desc">3 double rooms per unit (6 People)</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">High Speed Internet</div>
+                                                <div class="dorm-desc">WiFi/LAN + Utilities included in fee</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Utilities Included</div>
+                                                <div class="dorm-desc">Water, electricity, and heating covered</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-price"
+                                            style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                                                <div class="dorm-price-label">Semester (6 Mo)</div>
+                                                <div class="dorm-price-value" style="font-size: 1rem;"><span
+                                                        class="money" data-krw="949000">949,000 KRW</span></div>
+                                            </div>
+                                            <div
+                                                style="display: flex; justify-content: space-between; width: 100%; border-top: 1px dashed var(--border-dim); padding-top: 8px;">
+                                                <div class="dorm-price-label">Annual (12 Mo)</div>
+                                                <div class="dorm-price-value"><span class="money"
+                                                        data-krw="1898000">1,898,000 KRW</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dorm-comparison">
+                            <div class="dorm-comparison-header">Dormitory Comparison</div>
+                            <table class="dorm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Yeosu Dorm (Year 1)</th>
+                                        <th>Gwangju Dorm (Year 2+)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Campus Location</td>
+                                        <td>Yeosu Campus</td>
+                                        <td>Gwangju Campus</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Halal Kitchen</td>
+                                        <td>Available</td>
+                                        <td>Not Available</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Room Type</td>
+                                        <td>Double/Triple</td>
+                                        <td>Double/Single</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monthly Cost</td>
+                                        <td><span class="money" data-krw="102467">~102,467 KRW</span></td>
+                                        <td><span class="money" data-krw="158167">~158,167 KRW</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Application Period</td>
+                                        <td>Before Semester 1</td>
+                                        <td>Before Semester 2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="dorm-note">
+                                <strong>Note:</strong> Yeosu Dormitory is strategically designed for first-year
+                                international students with special amenities including halal kitchen facilities.
+                                Students typically move to Gwangju campus dormitories starting from their second year.
                             </div>
                         </div>
                     </div>
@@ -620,54 +716,285 @@
                         </div>
                     </div>
 
-
-                    <!-- CONTACT CATEGORY -->
-                    <div id="contact-content" class="category-content">
+                    <!-- MONTHLY EXPENSES CATEGORY -->
+                    <div id="monthly-expenses-content" class="category-content">
+                        <!-- LIVING EXPENSES DEEP DIVE -->
                         <div class="glass-panel">
-                            <div class="panel-header">Application Support & Contact Information</div>
-                            <div class="doc-columns">
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">💳 Application Details</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Application Fee</span>
-                                            <span class="money" data-krw="70000">70,000 KRW</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Refund Policy</span>
-                                            <span class="badge badge-gray">No Refund</span>
-                                        </div>
-                                        <div class="note">No cancellation/refund once processed.</div>
+                            <div class="panel-header">Life Support: Monthly Breakdown Strategy</div>
+                            <div class="living-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <!-- COLUMN 1: YEOSU CAMPUS (BUDGET) -->
+                                <div class="unit-card">
+                                    <div class="unit-header">YEOSU CAMPUS (BUDGET)</div>
+                                    <div class="unit-row">
+                                        <div>Food/Cooking<span class="fin-sub">Halal Kitchen (10k/day)</span></div>
+                                        <span class="money" data-krw="300000">300,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Eating Out<span class="fin-sub">Occasional</span></div>
+                                        <span class="money" data-krw="50000">50,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Snacks / Coffee<span class="fin-sub">Moderate</span></div>
+                                        <span class="money" data-krw="50000">50,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Mobile Data<span class="fin-sub">Essential</span></div>
+                                        <span class="money" data-krw="35000">35,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Transport<span class="fin-sub">Local travel</span></div>
+                                        <span class="money" data-krw="30000">30,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
+                                        <div>Mandatory NHIS<span class="fin-sub">Visa Requirement</span></div>
+                                        <span class="money" data-krw="70000">70,000 KRW</span>
+                                    </div>
+                                    <div class="unit-total">
+                                        <span>EST. MONTHLY</span>
+                                        <span class="money" data-krw="535000">~535,000 KRW</span>
+                                    </div>
+                                    <div class="unit-note" style="color: var(--gold-primary);">
+                                        *Lower living costs due to cheaper housing and self-catering in Yeosu.
                                     </div>
                                 </div>
 
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">📍 Submission Address</div>
-                                    <div class="doc-body">
-                                        <div style="font-family:'JetBrains Mono'; font-size:0.8rem; line-height:1.6;">
-                                            Office of International Affairs,<br>
-                                            <strong>Room 214</strong>, Yongbong-ro 77,<br>
-                                            Buk-gu, Gwangju, 61186<br>
-                                            South Korea
-                                        </div>
+                                <!-- COLUMN 2: GWANGJU CAMPUS (CITY) -->
+                                <div class="unit-card" style="border-color: var(--text-muted);">
+                                    <div class="unit-header" style="color: var(--text-muted);">GWANGJU CAMPUS (CITY)
                                     </div>
-                                </div>
-
-                                <div class="doc-card interactable">
-                                    <div class="doc-head">📞 Contact Channels</div>
-                                    <div class="doc-body">
-                                        <div class="doc-row">
-                                            <span class="doc-name">Admissions Contact</span>
-                                            <span>+82-62-530-1268</span>
-                                        </div>
-                                        <div class="doc-row">
-                                            <span class="doc-name">Email Support</span>
-                                            <span>international@jnu.ac.kr</span>
-                                        </div>
-                                        <div class="note">Response time: 2-3 business days</div>
+                                    <div class="unit-row">
+                                        <div>Food/Dining<span class="fin-sub">City prices (~15k/day)</span></div>
+                                        <span class="money" data-krw="450000">450,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Eating Out<span class="fin-sub">Social / Weekend</span></div>
+                                        <span class="money" data-krw="100000">100,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Snacks / Coffee<span class="fin-sub">Cafes & Study</span></div>
+                                        <span class="money" data-krw="80000">80,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Mobile Data<span class="fin-sub">Essential</span></div>
+                                        <span class="money" data-krw="35000">35,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Transport<span class="fin-sub">Intra-campus/City</span></div>
+                                        <span class="money" data-krw="40000">40,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
+                                        <div>Mandatory NHIS<span class="fin-sub">Visa Requirement</span></div>
+                                        <span class="money" data-krw="70000">70,000 KRW</span>
+                                    </div>
+                                    <div class="unit-total" style="color: var(--text-main);">
+                                        <span>EST. MONTHLY</span>
+                                        <span class="money" data-krw="775000">~775,000 KRW</span>
+                                    </div>
+                                    <div class="unit-note">
+                                        *Higher costs driven by city lifestyle and higher dormitory fees.
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+
+
+                        <!-- TOTAL ANNUAL BREAKDOWN -->
+                        <div class="glass-panel" style="margin-top: 30px; border-color: var(--gold-primary);">
+                            <div class="panel-header" style="color: var(--gold-primary);">Scenario A: Yeosu Campus
+                                (Budget Track)</div>
+                            <div class="breakdown-list">
+                                <!-- ITEM 1: TUITION -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">1. Tuition</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="4704000">4,704,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="2352000">2,352,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="2352000">2,352,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 2: DORMITORY -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">2. Dormitory (Yeosu)</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="1229600">1,229,600
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="614800">614,800 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="614800">614,800 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 3: LIVING EXPENSES -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">3. Living Expenses</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="6420000">6,420,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Monthly Average</span>
+                                        <span class="sub-val money" data-krw="535000">~535,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Duration</span>
+                                        <span class="sub-val">12 Months</span>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="fin-total"
+                                    style="margin-top: 10px; font-size: 1.4rem; color: var(--gold-primary); padding-top: 10px; border-top: none;">
+                                    <span>GRAND TOTAL (Scenario A)</span>
+                                    <span class="money" data-krw="12353600">12,353,600 KRW</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCENARIO B: GWANGJU CAMPUS -->
+                        <div class="glass-panel" style="margin-top: 30px; border-color: var(--text-muted);">
+                            <div class="panel-header" style="color: var(--text-main);">Scenario B: Gwangju Campus (City
+                                Track)</div>
+                            <div class="breakdown-list">
+                                <!-- ITEM 1: TUITION -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">1. Tuition</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="4704000">4,704,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="2352000">2,352,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="2352000">2,352,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 2: DORMITORY -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">2. Dormitory (Gwangju)</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="1898000">1,898,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 1</span>
+                                        <span class="sub-val money" data-krw="949000">949,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Semester 2</span>
+                                        <span class="sub-val money" data-krw="949000">949,000 KRW</span>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM 3: LIVING EXPENSES -->
+                                <div class="breakdown-item">
+                                    <div class="breakdown-header">
+                                        <div class="breakdown-title">3. Living Expenses</div>
+                                        <div class="breakdown-total"><span class="money" data-krw="9300000">9,300,000
+                                                KRW</span></div>
+                                    </div>
+                                    <div class="breakdown-sub-row" style="color: var(--gold-primary);">
+                                        <span class="sub-label">City Living</span>
+                                        <span class="sub-val">Higher food/transport costs</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Monthly Average</span>
+                                        <span class="sub-val money" data-krw="775000">~775,000 KRW</span>
+                                    </div>
+                                    <div class="breakdown-sub-row">
+                                        <span class="sub-label">Duration</span>
+                                        <span class="sub-val">12 Months</span>
+                                    </div>
+                                </div>
+
+                                <div class="fin-total"
+                                    style="margin-top: 10px; font-size: 1.4rem; color: var(--text-main); padding-top: 10px; border-top: none;">
+                                    <span>GRAND TOTAL (Scenario B)</span>
+                                    <span class="money" data-krw="15902000">15,902,000 KRW</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTACT CATEGORY -->
+                    <div id="contact-content" class="category-content">
+                        <div class="doc-section-title">📦 Contact Information (PDF Pg 6)</div>
+                        <div class="doc-columns">
+
+                            <!-- COL 1: APPLICATION DETAILS -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">💳 Application Details</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Application Fee
+                                        </span>
+                                        <span class="badge badge-gold">70,000 KRW</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Refund Policy
+                                        </span>
+                                        <span class="badge badge-gray">No Refund</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Application Method
+                                        </span>
+                                        <span class="badge badge-teal">UWAY APPLY</span>
+                                    </div>
+                                    <div class="note">No cancellation/refund once processed.</div>
+                                </div>
+                            </div>
+
+
+                            <!-- COL 3: CONTACT CHANNELS -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">📞 Contact Channels</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Phone
+                                        </span>
+                                        <span class="badge badge-gold">+82-62-530-1268</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Email
+                                        </span>
+                                        <span class="badge badge-teal">international@jnu.ac.kr</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Response Time
+                                        </span>
+                                        <span class="badge badge-gray">2-3 Business Days</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>Support Hours:</strong> Mon-Fri 9AM-5PM<br>
+                                        <strong>Language:</strong> English/Korean support available
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -676,143 +1003,132 @@
                         <div class="glass-panel">
                             <div class="panel-header">Frequently Asked Questions (CNU Admissions)</div>
 
-                            <!-- FAQ ITEM 1 -->
+                            <!-- Language Requirements & Korean Program -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>Is TOPIK Level 4 required for admission?</span>
+                                    <span>Do I need TOPIK Level 4 to apply? Can I apply with only an English Proficiency
+                                        Certificate?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            Yes, TOPIK Level 4 is required for Korean Track applicants. However, you can
-                                            apply without TOPIK if you have an English certificate like IELTS 7.5+.
-                                            Korean Track applicants without TOPIK Level 4 will be placed in a mandatory
-                                            36-credit Korean language program.
+                                            You do not strictly need TOPIK Level 4 to apply. TOPIK Level 3 is sufficient
+                                            for application, or you may apply using an English Proficiency Certificate
+                                            (such as IELTS) without any TOPIK score.
+                                            However: If you are admitted without TOPIK Level 4, you will be legally
+                                            required to take the mandatory 36-credit Korean language program at the
+                                            Yeosu Campus. Only students who submit TOPIK Level 4 or higher can start
+                                            their major studies immediately.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ ITEM 2 -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>Can I apply without TOPIK using my IELTS score?</span>
+                                    <span>Does CNU offer a 100% English-track curriculum?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            Yes, you can apply with IELTS 7.5+ score. English Track applicants can use
-                                            either IELTS 7.5+ or TOPIK Level 4+ for admission. Your IELTS 7.5 score will
-                                            be used for 50% of the admission evaluation.
+                                            No. The university clarified that they do not have a 100% English track.
+                                            While various majors offer specific courses taught in English, the primary
+                                            mode of instruction is Korean. This is why the Korean language program is
+                                            mandatory for those with low/no TOPIK scores.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ ITEM 3 -->
+                            <!-- Tuition & Visa Status -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>What visa category will I get and can I transfer between campuses?</span>
+                                    <span>Does the mandatory 36-credit Korean language program require an additional
+                                        fee?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            You will receive a D-2 visa (Degree Student). Campus transfer is possible
-                                            after Year 1. Students typically complete the 36-credit Korean language
-                                            program at Yeosu, then transfer to the main campus (Gwangju) for major
-                                            studies. Business Administration majors study at Gwangju campus.
+                                            No. There are no additional fees for this program. Students placed in this
+                                            program pay the standard regular undergraduate tuition fee per semester.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ ITEM 4 -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>Is there an additional fee for the Korean language program?</span>
+                                    <span>What type of visa will I receive if I am placed in the mandatory Korean
+                                        language program?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            No, there is no additional fee for the Korean language program. The regular
-                                            tuition fees cover both the language program and subsequent major courses.
+                                            You will receive a D-2 (Degree Student) visa from the very beginning, just
+                                            like standard undergraduate students.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ ITEM 5 -->
+                            <!-- Campus & Progression -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>When do I need to submit the bank certificate?</span>
+                                    <span>Do I move to the main campus (Gwangju) after completing the language
+                                        program?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            The bank certificate showing KRW 16,000,000+ must be submitted with your
-                                            initial application. It must be an original certificate (not statements)
-                                            issued within 30 days of submission. All other documents must be received by
-                                            the document submission deadline.
+                                            It depends entirely on the location of your chosen major. If your major is
+                                            located at the Gwangju campus (e.g., Business Administration), you will move
+                                            there after completing the language program. If your major is located at the
+                                            Yeosu campus, you will remain there.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ ITEM 6 -->
+                            <!-- Application Documents (Financial) -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>Will my 5-year study gap after high school be a problem?</span>
+                                    <span>Can I submit the Bank Balance Certificate (KRW 16,000,000) after I receive my
+                                        admission result?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            The study gap will be evaluated on a case-by-case basis. COVID-19 academic
-                                            disruptions will be given contextual consideration. Your strong English
-                                            proficiency (IELTS 7.5+) and high school scores (SSC 92% + HSSC 60%) will be
-                                            considered favorably.
+                                            No. The Bank Balance Certificate is a mandatory document that must be
+                                            submitted at the time of your initial application. If this document is
+                                            missing, your application will be considered incomplete and will not be
+                                            processed.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ ITEM 7 -->
+                            <!-- Evaluation Criteria (Study Gap & Scores) -->
                             <div class="faq-group">
                                 <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>How should I fill out Form 3 for unusual circumstances?</span>
+                                    <span>How does a study gap (e.g., 5–6 years) affect admission, and will high
+                                        English/SSC scores help?</span>
                                     <span class="faq-group-icon">▼</span>
                                 </div>
                                 <div class="faq-group-content">
                                     <div style="padding: 20px;">
                                         <div class="faq-answer">
-                                            For COVID-19 impacts, check "Cyber Learning/Online Classes". For
-                                            post-graduation gap, select "Others" category. Explain family financial
-                                            necessity honestly. Provide detailed, honest explanations for all unusual
-                                            circumstances, clearly documenting COVID-19 impacts and family financial
-                                            situations.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FAQ ITEM 8 -->
-                            <div class="faq-group">
-                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
-                                    <span>What are my chances of getting scholarships?</span>
-                                    <span class="faq-group-icon">▼</span>
-                                </div>
-                                <div class="faq-group-content">
-                                    <div style="padding: 20px;">
-                                        <div class="faq-answer">
-                                            Semester 1 scholarships are not available (100% tuition payable). However,
-                                            Semester 2 scholarships are unlocked based on your Semester 1 university
-                                            grades. Target: Top 15% (GPA ~4.0+) for full tuition waiver (~1.9M KRW
-                                            saved) or Top 30% (GPA ~3.5+) for half tuition waiver (~980k KRW saved).
+                                            As long as you meet the basic Academic Background Eligibility stated in the
+                                            guidelines, you are qualified to submit an application.
+                                            However, the specific judgment regarding study gaps and the evaluation of
+                                            your grades or English scores is made solely by the department you are
+                                            applying to. The Office of International Affairs only screens documents for
+                                            completeness; they cannot predict the department's qualitative decision.
                                         </div>
                                     </div>
                                 </div>

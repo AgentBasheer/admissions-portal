@@ -606,26 +606,29 @@ h1 {
 }
 
 /* --- FINANCIAL TABLE (3 COLUMN) --- */
+/* --- FINANCIAL TABLE (VERTICAL STACK) --- */
 .fin-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
-}
-
-@media(max-width: 1000px) {
-    .fin-grid-3 {
-        grid-template-columns: 1fr;
-    }
 }
 
 .fin-card {
     background: rgba(255, 255, 255, 0.02);
-    padding: 20px;
-    border-radius: 12px;
     border: 1px solid var(--border-dim);
-    height: 100%;
+    border-radius: 16px;
+    padding: 0;
+    height: auto;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.fin-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 30px -10px rgba(22, 163, 74, 0.3);
 }
 
 .fin-card.highlight {
@@ -633,29 +636,42 @@ h1 {
     background: var(--highlight-bg, rgba(255, 255, 255, 0.03));
 }
 
+/* Header style matching dorm-header */
 .fin-col-title {
-    font-family: 'JetBrains Mono';
-    color: var(--text-muted);
-    margin-bottom: 15px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-bottom: 1px dashed var(--border-dim);
-    padding-bottom: 10px;
-    min-height: 35px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-dim);
+    font-family: 'Space Grotesk';
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0;
 }
 
 .highlight .fin-col-title {
     color: var(--gold-primary);
     border-color: var(--gold-dim);
+    background: rgba(22, 163, 74, 0.05);
+}
+
+.fin-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex-grow: 1;
 }
 
 .fin-row {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.85rem;
+}
+
+.fin-row:first-child {
+    padding-top: 0;
 }
 
 .fin-row span:last-child {
@@ -671,15 +687,30 @@ h1 {
     display: block;
 }
 
+.fin-row .fin-sub {
+    display: inline;
+    margin-top: 0;
+    margin-left: 6px;
+}
+
+.fin-row .fin-sub::before {
+    content: "(";
+}
+
+.fin-row .fin-sub::after {
+    content: ")";
+}
+
 .fin-total {
-    margin-top: auto;
+    margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid var(--border-dim);
     display: flex;
     justify-content: space-between;
-    font-weight: 700;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .highlight .fin-total {
@@ -1213,4 +1244,269 @@ h1 {
     100% {
         box-shadow: 0 0 0 0 var(--pulse-color-end, rgba(255, 255, 255, 0));
     }
+}
+
+/* --- DORMITORY SECTION --- */
+.dorm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+@media(max-width: 900px) {
+    .dorm-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dorm-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-dim);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.dorm-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 30px -10px rgba(22, 163, 74, 0.3);
+}
+
+.dorm-header {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dorm-name {
+    font-family: 'Space Grotesk';
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.dorm-badge {
+    font-family: 'JetBrains Mono';
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--gold-dim);
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+}
+
+.dorm-body {
+    padding: 20px;
+}
+
+.dorm-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.dorm-feature:last-child {
+    margin-bottom: 0;
+}
+
+.dorm-icon {
+    color: var(--gold-primary);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.dorm-text {
+    flex: 1;
+}
+
+.dorm-title {
+    font-family: 'Space Grotesk';
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.dorm-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.dorm-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-dim);
+}
+
+.dorm-price-label {
+    font-family: 'JetBrains Mono';
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.dorm-price-value {
+    font-family: 'Space Grotesk';
+    font-size: 1.1rem;
+    color: var(--gold-primary);
+    font-weight: 500;
+}
+
+.dorm-comparison {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-dim);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.dorm-comparison-header {
+    font-family: 'Space Grotesk';
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dorm-comparison-header::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: var(--gold-primary);
+}
+
+.dorm-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.dorm-table th,
+.dorm-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.dorm-table th {
+    font-family: 'JetBrains Mono';
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.02);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dorm-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dorm-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dorm-table td:first-child {
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    color: #fff;
+}
+
+.dorm-table td:last-child {
+    font-family: 'Space Grotesk';
+    color: var(--gold-primary);
+    font-weight: 500;
+    text-align: right;
+}
+
+.dorm-note {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--gold-dim);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.dorm-note strong {
+    color: var(--gold-primary);
+}
+
+/* --- BREAKDOWN LIST STYLING --- */
+.breakdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.breakdown-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border-dim);
+}
+
+.breakdown-title {
+    font-family: 'Space Grotesk';
+    font-size: 1.05rem;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breakdown-total {
+    font-family: 'Space Grotesk';
+    color: var(--gold-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.breakdown-sub-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    padding-left: 12px;
+    border-left: 2px solid var(--border-dim);
+}
+
+.breakdown-sub-row:last-child {
+    margin-bottom: 0;
+}
+
+.sub-label {
+    font-family: 'Inter';
+}
+
+.sub-val {
+    font-family: 'JetBrains Mono';
 }
