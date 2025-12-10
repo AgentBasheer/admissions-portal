@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Instant Dot Movement
         els.cursorDot.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) translate(-50%, -50%)`;
-        
+
         // Parallax Effect (Lightweight)
         const moveX = (win.w - mouse.x) / 40;
         const moveY = (win.h - mouse.y) / 40;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const speed = 0.2;
         outline.x += (mouse.x - outline.x) * speed;
         outline.y += (mouse.y - outline.y) * speed;
-        
+
         els.cursorOut.style.transform = `translate3d(${outline.x}px, ${outline.y}px, 0) translate(-50%, -50%)`;
         requestAnimationFrame(animateCursor);
     };
@@ -52,13 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- INTERACTION HANDLERS ---
     els.interactables.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            const isCnu = el.classList.contains('cnu');
-            const color = isCnu ? 'var(--gold)' : 'var(--jbnu-blue)';
-            
-            els.cursorOut.style.width = '60px';
-            els.cursorOut.style.height = '60px';
-            els.cursorOut.style.borderColor = color;
-            els.cursorOut.style.backgroundColor = isCnu ? 'rgba(212, 175, 55, 0.05)' : 'rgba(75, 137, 220, 0.05)';
+            // Unified cursor style (Green theme)
+            els.cursorOut.style.width = '70px';
+            els.cursorOut.style.height = '70px';
+            els.cursorOut.style.borderColor = 'var(--gold-primary)';
+            els.cursorOut.style.backgroundColor = 'var(--gold-dim)';
+            els.cursorOut.style.backdropFilter = "blur(2px)";
         });
 
         el.addEventListener('mouseleave', () => {
