@@ -52,6 +52,7 @@
             <a href="../index.html" class="nav-btn">← Back to Portal</a>
             <div class="nav-links">
                 <a href="cnu-chonnam.html" class="nav-btn">CNU</a>
+                <a href="knu-kangwon.html" class="nav-btn">KNU</a>
                 <a href="jbnu-jeonbuk.html" class="nav-btn active">JBNU</a>
             </div>
         </nav>
@@ -339,77 +340,67 @@
 
                     <!-- SCHOLARSHIP CATEGORY -->
                     <div id="scholarship-content" class="category-content">
-                        <!-- SCHOLARSHIP INTELLIGENCE CENTER -->
-                        <div class="glass-panel">
-                            <div class="panel-header">Scholarship Intelligence (PDF Pg 17)</div>
-                            <div class="schol-grid">
-
-                                <!-- SEMESTER 1: UNLOCKED -->
-                                <div class="schol-card unlocked">
-                                    <div class="schol-status status-active">Semester 1: AVAILABLE</div>
-                                    <div class="tac-value" style="color:#fff; font-size:1rem;">Freshman Scholarship
-                                    </div>
-                                    <p class="tac-sub" style="margin-top:10px; margin-bottom:10px;">
-                                        JBNU offers entrance scholarships based on Language Score (IELTS/TOPIK).
-                                    </p>
-
-                                    <!-- TYPE 3 TARGET -->
-                                    <div class="schol-target-row">
-                                        <span style="color:var(--gold-primary);">Target: Type 3 (IELTS 7.5)</span>
-                                        <span class="badge badge-gold">50% T2 WAIVER</span>
-                                    </div>
-                                    <div class="gpa-bar-bg">
-                                        <div class="gpa-bar-fill bar-gold"></div>
-                                    </div>
-                                    <div class="fin-sub" style="margin-bottom:15px;">
-                                        Waives 50% of Tuition Fee II only (not complete tuition). <br>
-                                        Engineering: 2.29M -> 1.14M Waiver on Fee II.<br>
-                                        <strong>You Pay: ~1.55M KRW total (includes Fee I + reduced Fee II).</strong>
-                                    </div>
-
-                                    <!-- TYPE 5 TARGET -->
-                                    <div class="schol-target-row">
-                                        <span style="color:var(--text-muted);">Backup: Type 5 (Other Scores)</span>
-                                        <span class="badge badge-gray">100% T1 WAIVER</span>
-                                    </div>
-                                    <div class="gpa-bar-bg">
-                                        <div class="gpa-bar-fill" style="width:40%; background:#888;"></div>
-                                    </div>
-                                    <div class="fin-sub">
-                                        Waives Tuition I only (~410k KRW).
-                                    </div>
+                        
+                        <!-- 1. FRESHMAN STATUS (PARTIALLY SECURED) -->
+                        <div class="glass-panel" style="border-color: var(--gold-primary);">
+                            <div class="panel-header" style="justify-content: space-between; border-bottom: none; margin-bottom: 0;">
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <span>Freshman Scholarship</span>
+                                    <span class="badge badge-gold">AVAILABLE</span>
                                 </div>
-
-                                <!-- SEMESTER 2: MERIT BASED -->
-                                <div class="schol-card unlocked">
-                                    <div class="schol-status status-active">Semester 2+: MERIT</div>
-                                    <p class="tac-sub" style="margin-bottom:15px;">
-                                        Based on previous semester GPA. Must take at least 15 credits.
-                                    </p>
-
-                                    <!-- GPA TARGET 1 -->
-                                    <div class="schol-target-row">
-                                        <span style="color:#fff;">Top Tier (GPA ~4.0+)</span>
-                                        <span class="money" data-krw="2704000">100% Waiver</span>
-                                    </div>
-                                    <div class="gpa-bar-bg">
-                                        <div class="gpa-bar-fill bar-teal"></div>
-                                    </div>
-                                    <div class="fin-sub" style="margin-bottom:15px;">Full Tuition I & II Waiver.</div>
-
-                                    <!-- GPA TARGET 2 -->
-                                    <div class="schol-target-row">
-                                        <span style="color:#fff;">Mid Tier (GPA ~3.5+)</span>
-                                        <span class="money" data-krw="1557000">~50% Savings</span>
-                                    </div>
-                                    <div class="gpa-bar-bg">
-                                        <div class="gpa-bar-fill bar-teal" style="width:50%;"></div>
-                                    </div>
-                                    <div class="fin-sub">Specific amounts depend on department ranking.</div>
+                                <span class="money" data-krw="1147000" style="font-size: 1.2rem; color: var(--gold-primary);">50% WAIVER</span>
+                            </div>
+                            
+                            <!-- Minimal Data Grid -->
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-dim); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <div class="tac-head">Condition</div>
+                                    <div class="fin-sub">IELTS 7.5 or TOPIK 4</div>
                                 </div>
-
+                                <div>
+                                    <div class="tac-head">Your Profile</div>
+                                    <div class="fin-sub" style="color: #fff;">IELTS 7.5</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div class="tac-head">Value Saved</div>
+                                    <div class="money" style="color: #fff;">~1,147,000 KRW</div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- 2. SEMESTER 2+ (FUTURE) -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Semester 2+ (Merit Based)</div>
+                            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                Scholarships are re-evaluated every semester based on your GPA rank within the department.
+                            </div>
+
+                            <div class="fin-card">
+                                <div class="fin-body">
+                                    <!-- Row 1 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gold">TIER 1</span>
+                                            <span style="margin-left: 10px;">Top Tier (GPA ~4.0+)</span>
+                                        </div>
+                                        <span class="money" style="color: var(--gold-primary);">100% Waiver</span>
+                                    </div>
+                                    <!-- Row 2 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gray">TIER 2</span>
+                                            <span style="margin-left: 10px;">Mid Tier (GPA ~3.5+)</span>
+                                        </div>
+                                        <span class="money" data-krw="1147000">~50% Waiver</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="note">
+                                <strong>Note:</strong> Students must take at least 15 credits per semester and maintain a GPA of 2.5+ to remain eligible for any scholarships.
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- DORMITORY CATEGORY -->

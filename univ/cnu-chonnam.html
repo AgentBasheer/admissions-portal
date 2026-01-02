@@ -54,6 +54,7 @@
             <a href="../index.html" class="nav-btn">← Back to Portal</a>
             <div class="nav-links">
                 <a href="cnu-chonnam.html" class="nav-btn active">CNU</a>
+                <a href="knu-kangwon.html" class="nav-btn">KNU</a>
                 <a href="jbnu-jeonbuk.html" class="nav-btn">JBNU</a>
             </div>
         </nav>
@@ -388,55 +389,67 @@
 
                     <!-- SCHOLARSHIP CATEGORY -->
                     <div id="scholarship-content" class="category-content">
-                        <!-- SCHOLARSHIP INTELLIGENCE CENTER -->
-                        <div class="glass-panel">
-                            <div class="panel-header">Scholarship Intelligence</div>
-                            <div class="schol-grid">
-
-                                <!-- SEMESTER 1: LOCKED -->
-                                <div class="schol-card locked">
-                                    <div class="schol-status status-denied">Semester 1: LOCKED</div>
-                                    <div class="tac-value" style="color:var(--text-muted); font-size:1rem;">100% Tuition
-                                        Payable</div>
-                                    <div class="tac-sub" style="margin-top:10px;">
-                                        <strong style="color:var(--red-alert)">Reason:</strong> Admission is based on
-                                        High School HSSC (60%) & IELTS. <br>
-                                        • No TOPIK score available.<br>
-                                        • HSSC score too low for "Excellent Grades" waiver.
-                                    </div>
+                        
+                        <!-- 1. FRESHMAN STATUS (NOT SECURED) -->
+                        <div class="glass-panel" style="border-color: var(--red-alert);">
+                            <div class="panel-header" style="justify-content: space-between; border-bottom: none; margin-bottom: 0;">
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <span>Freshman Scholarship</span>
+                                    <span class="badge badge-gray">NOT AVAILABLE</span>
                                 </div>
-
-                                <!-- SEMESTER 2: UNLOCKED -->
-                                <div class="schol-card unlocked">
-                                    <div class="schol-status status-active">Semester 2: UNLOCKED</div>
-                                    <p class="tac-sub" style="margin-bottom:15px;">
-                                        Eligibility for Sem 2 is based <strong>ONLY</strong> on your Sem 1 University
-                                        Grades. High School grades no longer matter.
-                                    </p>
-
-                                    <!-- GPA TARGET 1 -->
-                                    <div class="schol-target-row">
-                                        <span style="color:#fff;">Target: Top 15% (GPA ~4.0+)</span>
-                                        <span class="money" data-krw="2352000">~2.35M KRW Saved</span>
-                                    </div>
-                                    <div class="gpa-bar-bg">
-                                        <div class="gpa-bar-fill bar-gold"></div>
-                                    </div>
-                                    <div class="fin-sub" style="margin-bottom:15px;">Full Tuition Waiver</div>
-
-                                    <!-- GPA TARGET 2 -->
-                                    <div class="schol-target-row">
-                                        <span style="color:#fff;">Target: Top 30% (GPA ~3.5+)</span>
-                                        <span class="money" data-krw="1176000">~1.18M KRW Saved</span>
-                                    </div>
-                                    <div class="gpa-bar-bg">
-                                        <div class="gpa-bar-fill bar-teal"></div>
-                                    </div>
-                                    <div class="fin-sub">Half Tuition Waiver (Most Realistic Goal)</div>
+                                <span style="font-size: 1.2rem; color: var(--red-alert);">0% WAIVER</span>
+                            </div>
+                            
+                            <!-- Minimal Data Grid -->
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-dim); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <div class="tac-head">Condition</div>
+                                    <div class="fin-sub">TOPIK Level 4 or Excellent Grades</div>
                                 </div>
-
+                                <div>
+                                    <div class="tac-head">Your Profile</div>
+                                    <div class="fin-sub" style="color: var(--text-muted);">TOPIK: Not Available</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div class="tac-head">Value Saved</div>
+                                    <div class="money" data-krw="0" style="color: var(--text-muted);">0 KRW</div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- 2. SEMESTER 2+ (FUTURE) -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Semester 2+ (Merit Based)</div>
+                            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                Scholarships are re-evaluated every semester based on your GPA rank within the department.
+                            </div>
+
+                            <div class="fin-card">
+                                <div class="fin-body">
+                                    <!-- Row 1 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gold">TIER 1</span>
+                                            <span style="margin-left: 10px;">Top 15% of Department</span>
+                                        </div>
+                                        <span class="money" style="color: var(--gold-primary);">100% Waiver</span>
+                                    </div>
+                                    <!-- Row 2 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gray">TIER 2</span>
+                                            <span style="margin-left: 10px;">Top 30% of Department</span>
+                                        </div>
+                                        <span class="money">~50% Waiver</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="note">
+                                <strong>Note:</strong> Students must take at least 12 credits per semester and maintain a GPA of 2.5+ to remain eligible for any scholarships.
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- DORMITORY CATEGORY -->

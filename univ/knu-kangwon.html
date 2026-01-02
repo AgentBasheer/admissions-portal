@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | KNU Kangwon Admissions</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/university-common.css">
+
+    <!-- JS -->
+    <script src="../js/university-common.js" defer></script>
+    <script src="../js/knu-script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="ambient-glow"></div>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- CURRENCY TOGGLE -->
+    <button id="currency-toggle" class="interactable" onclick="toggleCurrency()">
+        <span id="curr-label">KRW</span>
+        <div class="toggle-track">
+            <div class="toggle-thumb"></div>
+        </div>
+        <span>PKR</span>
+    </button>
+
+    <div class="container">
+        <header>
+            <div class="status-pill">
+                <div class="status-dot"></div>
+                <span id="system-time">SYSTEM DATE: INITIALIZING...</span>
+            </div>
+            <h1>KNU // Kangwon National University</h1>
+            <p class="subtitle">Fall 2026 Admissions (Pakistani Profile)</p>
+        </header>
+
+        <!-- NAVIGATION BAR -->
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-btn">← Back to Portal</a>
+            <div class="nav-links">
+                <a href="cnu-chonnam.html" class="nav-btn">CNU</a>
+                <a href="knu-kangwon.html" class="nav-btn active">KNU</a>
+                <a href="jbnu-jeonbuk.html" class="nav-btn">JBNU</a>
+            </div>
+        </nav>
+
+        <!-- ================= KANGWON (KNU) ================= -->
+        <div id="knu" class="uni-content">
+            <!-- CATEGORY TABS -->
+            <div class="category-tabs">
+                <div class="category-tab active" onclick="showCategory('overview')">📊 Overview</div>
+                <div class="category-tab" onclick="showCategory('academic')">🎓 Academic</div>
+                <div class="category-tab" onclick="showCategory('financial')">💰 Financial</div>
+                <div class="category-tab" onclick="showCategory('scholarship')">🎓 Scholarship</div>
+                <div class="category-tab" onclick="showCategory('dormitory')">🏠 Dormitory</div>
+                <div class="category-tab" onclick="showCategory('monthly-expenses')">💸 Expenses</div>
+                <div class="category-tab" onclick="showCategory('documents')">📦 Documents</div>
+                <div class="category-tab" onclick="showCategory('contact')">📞 Contact</div>
+                <div class="category-tab" onclick="showCategory('faq')">❓ FAQ</div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <!-- LEFT COLUMN -->
+                <div>
+                    <!-- OVERVIEW CATEGORY -->
+                    <div id="overview-content" class="category-content active">
+                        <!-- TACTICAL DATA -->
+                        <div class="tactical-grid">
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Launch Budget (Sem 1)</div>
+                                <div class="tac-value">~<span class="money" data-krw="2800000">2.80M KRW</span></div>
+                                <div class="tac-sub">Includes Flight, Dorm, Insurance. Tuition is 0 KRW (Scholarship).</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Scholarship Status</div>
+                                <div class="tac-value risk-low">SECURED (100%)</div>
+                                <div class="tac-sub">
+                                    <!-- PDF Page 25 -->
+                                    IELTS 7.5 > 7.0 Requirement. <br>
+                                    <span class="highlight-text">Full Tuition Waiver Guaranteed.</span>
+                                </div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Bank Proof Timing</div>
+                                <div class="tac-value">POST-ADMISSION</div>
+                                <div class="tac-sub">
+                                    <!-- PDF Page 21 -->
+                                    "Required only upon admission." Not needed for initial application.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TIMELINE (FALL TRACK) -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Timeline Operations (Fall 2026 Target)</div>
+                            <!-- PDF Page 5 (Schedule) -->
+                            <div class="timeline-track">
+                                <div class="timeline-item active">
+                                    <div class="timeline-marker"></div>
+                                    <span class="you-are-here">CURRENT</span>
+                                    <span class="timeline-date">DEC 2025 - APR 2026</span>
+                                    <div class="timeline-title">Doc Preparation</div>
+                                    <p class="timeline-desc">
+                                        1. <strong>Apostille:</strong> Legalize HSSC Diploma (Mandatory) & Transcript.<br>
+                                        2. <strong>Bank Cert:</strong> Do <strong>NOT</strong> issue yet. Wait for acceptance.
+                                    </p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <span class="timeline-date">EST. MAY 2026</span>
+                                    <div class="timeline-title">Online Application</div>
+                                    <p class="timeline-desc">Apply via KNU Website. Pay <strong>50,000 KRW</strong> fee (PDF Pg 20). Upload scanned docs.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <span class="timeline-date">EST. JUNE 2026</span>
+                                    <div class="timeline-title">Results & Financial Proof</div>
+                                    <p class="timeline-desc">
+                                        <strong>CRITICAL STEP:</strong> Once admitted, you MUST submit the Original Bank Certificate (~16M KRW) by the specified deadline (approx. August) to get the visa documents.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACADEMIC CATEGORY -->
+                    <div id="academic-content" class="category-content">
+                        <div class="doc-section-title">🎓 Target Program: Global Convergence (PDF Pg 11)</div>
+                        <div class="doc-columns">
+
+                            <!-- MAJOR 1: GLOBAL BUSINESS -->
+                            <div class="doc-card interactable" style="border: 1px solid var(--gold-primary);">
+                                <div class="doc-head">🎓 Global Business</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Department
+                                        </span>
+                                        <span class="badge badge-gold">Global Convergence</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Track
+                                        </span>
+                                        <span>English Track</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Eligibility
+                                        </span>
+                                        <!-- PDF Page 8 -->
+                                        <span>IELTS 5.5+ (You have 7.5)</span>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                                        "A major aimed at cultivating global business professionals... emphasized systematic foreign language education." (PDF Pg 11)
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Screening Method
+                                        </span>
+                                        <!-- PDF Page 16 -->
+                                        <span class="badge badge-teal">Document + Interview</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>Method ②:</strong> Page 16 confirms Global Business uses "In-person Interview" (Weighted 50%). For international applicants, this is conducted via Video Call.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- FINANCIAL CATEGORY -->
+                    <div id="financial-content" class="category-content">
+                        <!-- FINANCIAL OVERVIEW CARDS -->
+                        <div class="tactical-grid">
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Tuition (Sem 1)</div>
+                                <div class="tac-value"><span class="money" data-krw="0">0 KRW</span></div>
+                                <div class="tac-sub">100% Waiver (IELTS 7.5). PDF Pg 25.</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Dorm (Semester)</div>
+                                <div class="tac-value"><span class="money" data-krw="633000">633,000 KRW</span></div>
+                                <div class="tac-sub">Double Room. PDF Pg 28.</div>
+                            </div>
+                            <div class="tactical-card interactable">
+                                <div class="tac-head">Bank Threshold</div>
+                                <div class="tac-value"><span class="money" data-krw="16000000">16,000,000 KRW</span></div>
+                                <div class="tac-sub">Required <strong>upon admission</strong>. PDF Pg 21.</div>
+                            </div>
+                        </div>
+
+                        <!-- FINANCIAL INTELLIGENCE PANEL -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Financial Intelligence (Based on PDF Data)</div>
+                            <div class="fin-grid-3">
+
+                                <!-- PHASE 1: LAUNCH -->
+                                <div class="fin-card highlight">
+                                    <div class="fin-col-title">🚀 MISSION LAUNCH (Initial Costs)</div>
+                                    <div class="fin-body">
+                                        <div class="fin-row">
+                                            <div>Tuition (Sem 1)</div>
+                                            <span class="money" data-krw="0">0 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <!-- PDF Page 28 -->
+                                            <div>Dorm Fee (4 Months)</div>
+                                            <span class="money" data-krw="633000">633,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <!-- PDF Page 28 -->
+                                            <div>Dorm Deposit</div>
+                                            <span class="money" data-krw="130000">130,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <!-- PDF Page 20 -->
+                                            <div>Application Fee</div>
+                                            <span class="money" data-krw="50000">50,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <!-- PDF Page 24 -->
+                                            <div>Insurance (Est.)</div>
+                                            <span class="money" data-krw="70000">70,000 KRW</span>
+                                        </div>
+                                        <div class="fin-total" style="color: var(--gold-primary);">
+                                            <span>REQ CASH</span>
+                                            <span class="money" data-krw="883000">~883,000 KRW</span>
+                                        </div>
+                                        <div class="fin-sub" style="margin-top:10px;">Excludes flight/food. This is just University payable.</div>
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 2: SEMESTER 2 -->
+                                <div class="fin-card">
+                                    <div class="fin-col-title">🏁 SEMESTER 2 (GPA Dependent)</div>
+                                    <div class="fin-body">
+                                        <!-- PDF Page 23 -->
+                                        <div class="fin-row">
+                                            <div style="font-size:0.8rem; color:var(--text-muted);">Standard Tuition: 2.1M KRW</div>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>If Top 10% GPA</div>
+                                            <span class="money" data-krw="1365000">1,365,000 KRW</span>
+                                        </div>
+                                        <div class="fin-row">
+                                            <div>Dorm (4 Months)</div>
+                                            <span class="money" data-krw="633000">633,000 KRW</span>
+                                        </div>
+                                        <div class="fin-total" style="border-color:var(--border-dim); color:var(--text-main);">
+                                            <span>EST. TOTAL</span>
+                                            <span class="money" data-krw="1998000">~2.0M KRW</span>
+                                        </div>
+                                        <div class="fin-sub" style="margin-top:10px;">Assumes Top 10% GPA (35% Waiver).</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SCHOLARSHIP CATEGORY -->
+                    <div id="scholarship-content" class="category-content">
+                        
+                        <!-- 1. FRESHMAN STATUS (SECURED) -->
+                        <div class="glass-panel" style="border-color: var(--gold-primary);">
+                            <div class="panel-header" style="justify-content: space-between; border-bottom: none; margin-bottom: 0;">
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <span>Freshman Scholarship</span>
+                                    <span class="badge badge-gold">SECURED</span>
+                                </div>
+                                <span class="money" style="font-size: 1.2rem; color: var(--gold-primary);">100% WAIVER</span>
+                            </div>
+                            
+                            <!-- Minimal Data Grid -->
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-dim); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <div class="tac-head">Condition</div>
+                                    <div class="fin-sub">IELTS 7.0 or higher</div>
+                                </div>
+                                <div>
+                                    <div class="tac-head">Your Profile</div>
+                                    <div class="fin-sub" style="color: #fff;">IELTS 7.5</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div class="tac-head">Value Saved</div>
+                                    <div class="money" style="color: #fff;">~2,100,000 KRW</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. SEMESTER 2+ (FUTURE) -->
+                        <div class="glass-panel">
+                            <div class="panel-header">Semester 2+ (Merit Based)</div>
+                            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                Scholarships are re-evaluated every semester based on your GPA rank within the department.
+                            </div>
+
+                            <div class="fin-card">
+                                <div class="fin-body">
+                                    <!-- Row 1 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gold">TIER 1</span>
+                                            <span style="margin-left: 10px;">Top 1% of Department</span>
+                                        </div>
+                                        <span class="money" style="color: var(--gold-primary);">100% Waiver</span>
+                                    </div>
+                                    <!-- Row 2 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gray">TIER 2</span>
+                                            <span style="margin-left: 10px;">Top 10% of Department</span>
+                                        </div>
+                                        <span class="money">~35% Waiver</span>
+                                    </div>
+                                    <!-- Row 3 -->
+                                    <div class="fin-row">
+                                        <div>
+                                            <span class="badge badge-gray">TIER 3</span>
+                                            <span style="margin-left: 10px;">Top 20% of Department</span>
+                                        </div>
+                                        <span class="money">~20% Waiver</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="note">
+                                <strong>Note:</strong> Students must take at least 12 credits per semester and maintain a GPA of 2.5+ to remain eligible for any scholarships.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- DORMITORY CATEGORY -->
+                    <div id="dormitory-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">Chuncheon Campus Dormitory (PDF Page 28)</div>
+                            <div class="dorm-grid">
+                                <!-- CHUNCHEON DORM -->
+                                <div class="dorm-card interactable">
+                                    <div class="dorm-header">
+                                        <div class="dorm-name">International Dorm</div>
+                                        <div class="dorm-badge">Recommended</div>
+                                    </div>
+                                    <div class="dorm-body">
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Kitchen Included</div>
+                                                <div class="dorm-desc">"Equipped with a kitchen" (PDF Pg 28). Essential for Halal/Dietary needs.</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-feature">
+                                            <div class="dorm-icon">✓</div>
+                                            <div class="dorm-text">
+                                                <div class="dorm-title">Double Room</div>
+                                                <div class="dorm-desc">Standard shared occupancy.</div>
+                                            </div>
+                                        </div>
+                                        <div class="dorm-price"
+                                            style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                                                <div class="dorm-price-label">Semester (4 Months)</div>
+                                                <div class="dorm-price-value" style="font-size: 1rem;"><span
+                                                        class="money" data-krw="633000">633,000 KRW</span></div>
+                                            </div>
+                                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                                                <div class="dorm-price-label">Security Deposit</div>
+                                                <div class="dorm-price-value" style="font-size: 0.9rem; color:var(--text-muted);"><span
+                                                        class="money" data-krw="130000">130,000 KRW</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dorm-note" style="margin-top: 20px;">
+                                <strong>Important:</strong> "All new students wishing to move into the dormitory will be accommodated" (PDF Pg 4).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXPENSES CATEGORY -->
+                    <div id="monthly-expenses-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">Estimated Monthly Expenses (Chuncheon)</div>
+                            <div class="living-grid" style="grid-template-columns: 1fr; gap: 20px;">
+                                <div class="unit-card">
+                                    <div class="unit-header">CHUNCHEON CAMPUS (Living in Intl Dorm)</div>
+                                    <div class="unit-row">
+                                        <div>Food/Cooking<span class="fin-sub">Using Dorm Kitchen</span></div>
+                                        <span class="money" data-krw="300000">~300,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Eating Out<span class="fin-sub">Occasional</span></div>
+                                        <span class="money" data-krw="100000">~100,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Mobile/Internet</div>
+                                        <span class="money" data-krw="40000">~40,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row">
+                                        <div>Transport</div>
+                                        <span class="money" data-krw="30000">~30,000 KRW</span>
+                                    </div>
+                                    <div class="unit-row" style="color:#d43737; font-weight:700;">
+                                        <div>Mandatory NHIS<span class="fin-sub">Health Insurance</span></div>
+                                        <span class="money" data-krw="70000">~70,000 KRW</span>
+                                    </div>
+                                    <div class="unit-total">
+                                        <span>EST. MONTHLY</span>
+                                        <span class="money" data-krw="540000">~540,000 KRW</span>
+                                    </div>
+                                    <div class="unit-note">
+                                        *Costs are estimates. The International Dorm's kitchen allows significant savings on food compared to buying meal plans.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DOCUMENTS CATEGORY -->
+                    <div id="documents-content" class="category-content">
+                        <div class="doc-section-title">📦 Required Documents (Strict PDF Rules)</div>
+                        <div class="doc-columns">
+
+                            <!-- COL 1: STAGE 1 (APPLICATION) -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">1️⃣ Stage 1: Application</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Application Form
+                                        </span>
+                                        <span class="badge badge-gray">ONLINE</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> HSSC Diploma (12th)
+                                        </span>
+                                        <span class="badge badge-gold">APOSTILLE</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> HSSC Transcript
+                                        </span>
+                                        <span class="badge badge-teal">ORIGINAL</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> IELTS 7.5 Report
+                                        </span>
+                                        <span class="badge badge-teal">ORIGINAL</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Family Relations Cert
+                                        </span>
+                                        <span class="badge badge-teal">NOTARIZED</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Passport Copies
+                                        </span>
+                                        <span class="badge badge-gray">Applicant + Parents</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>Diploma vs Transcript:</strong> PDF Pg 21 explicitly requires "Apostille" for the Graduation Certificate (Diploma). For the Transcript, it says "Original or Notarized Original".
+                                        <br><em>Tip: In Pakistan, IBCC/MOFA usually verify them together. Submitting both as Apostilled is safer.</em>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COL 2: STAGE 2 (POST-ADMISSION) -->
+                            <div class="doc-card interactable" style="border: 1px dashed var(--gold-primary);">
+                                <div class="doc-head">2️⃣ Stage 2: Admission (Aug)</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Bank Certificate
+                                        </span>
+                                        <span class="badge badge-gold">ORIGINAL</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Form 3 (Guarantor)
+                                        </span>
+                                        <span class="badge badge-teal">SIGNED</span>
+                                    </div>
+                                    <div class="note">
+                                        <strong>Timing:</strong> "Proof of Financial Ability (Required only upon admission)" (PDF Pg 21).
+                                        <br><strong>Deadline:</strong> Likely late August for Fall intake.
+                                        <br><strong>Amount:</strong> 16,000,000 KRW (in Applicant or Parent's name).
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTACT CATEGORY -->
+                    <div id="contact-content" class="category-content">
+                        <div class="doc-section-title">📞 Contact Information (PDF Pg 1 & 25)</div>
+                        <div class="doc-columns">
+
+                            <!-- DEPT CONTACT -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">Department of Global Convergence</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Phone
+                                        </span>
+                                        <span class="badge badge-gold">+82-33-250-7967</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Email
+                                        </span>
+                                        <span class="badge badge-teal">gcadmission@kangwon.ac.kr</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Address
+                                        </span>
+                                        <span style="font-size: 0.8rem;">Room 106, Global Talent Network Center, KNU, 1 Gangwondaehakgil, Chuncheon-si, 24341</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- OIA CONTACT -->
+                            <div class="doc-card interactable">
+                                <div class="doc-head">Office of International Affairs</div>
+                                <div class="doc-body">
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Phone
+                                        </span>
+                                        <span class="badge badge-gold">+82-33-250-7615</span>
+                                    </div>
+                                    <div class="doc-row">
+                                        <span class="doc-name">
+                                            <div class="check-box"></div> Email
+                                        </span>
+                                        <span class="badge badge-teal">enter@kangwon.ac.kr</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- FAQ CATEGORY -->
+                    <div id="faq-content" class="category-content">
+                        <div class="glass-panel">
+                            <div class="panel-header">FAQ: Your Specific Queries</div>
+
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Do I submit the Bank Certificate now or later?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            <strong>Later.</strong> PDF Page 21, Item 6 says "Required only upon admission." The schedule on Page 5 also separates "Application Submission" and "Deadline for Proof of Financial Resources". You generally submit this document only after you have been successfully screened and admitted, usually to get your Certificate of Admission (CoA) for the visa.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Do I need to submit my SSC (Matric) Documents?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            The PDF (Pg 8 & 21) only asks for <strong>High School Graduation</strong> (which corresponds to your HSSC/Intermediate). It does not explicitly request Middle School (SSC/Matric). However, carry your SSC documents just in case, but strictly speaking, only the HSSC Diploma (Apostilled) and Transcript are mandatory for the application.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="faq-group">
+                                <div class="faq-group-header interactable" onclick="toggleFaqGroup(this)">
+                                    <span>Which documents need Apostille vs Notarization?</span>
+                                    <span class="faq-group-icon">▼</span>
+                                </div>
+                                <div class="faq-group-content">
+                                    <div style="padding: 20px;">
+                                        <div class="faq-answer">
+                                            According to PDF Pg 21:
+                                            <ul>
+                                                <li><strong>HSSC Diploma:</strong> Must be Apostilled.</li>
+                                                <li><strong>HSSC Transcript:</strong> "Original or Notarized Original". (Though Apostille is recommended for Pakistan).</li>
+                                                <li><strong>Family Relations Certificate:</strong> Notarized.</li>
+                                                <li><strong>Pakistan Origin:</strong> No translation needed as your docs are in English (Pg 21).</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div>
+                    <div class="info-card interactable">
+                        <div class="info-block">
+                            <div class="info-label">Tuition (Sem 1)</div>
+                            <div class="info-value highlight-text"><span class="money" data-krw="0">0 KRW</span></div>
+                            <div class="info-sub">Waived (IELTS 7.5)</div>
+                        </div>
+                        <div class="info-block">
+                            <div class="info-label">Application Fee</div>
+                            <div class="info-value"><span class="money" data-krw="50000">50,000 KRW</span></div>
+                            <div class="info-sub">PDF Pg 20</div>
+                        </div>
+                    </div>
+
+                    <div class="info-card interactable">
+                        <div class="info-block">
+                            <div class="info-label">Submission Address (Pg 20)</div>
+                            <div class="info-sub" style="font-family:'JetBrains Mono'; font-size:0.8rem;">
+                                Department of Global Convergence,<br>
+                                <strong>Room 106</strong>, Global Talent Center,<br>
+                                KNU, 1 Gangwondaehakgil,<br>
+                                Chuncheon-si, 24341, Korea
+                            </div>
+                        </div>
+                        <div class="info-block" style="margin-top:20px;">
+                            <div class="info-label">Dept Contact</div>
+                            <div class="info-sub">
+                                📞 033-250-7967<br>
+                                📧 gcadmission@kangwon.ac.kr
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
